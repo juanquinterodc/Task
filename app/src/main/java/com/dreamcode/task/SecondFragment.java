@@ -18,6 +18,8 @@ import com.dreamcode.task.databinding.FragmentSecondBinding;
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+    private int noteId = -1;
+    private long noteTimestamp = -1;
 
     @Override
     public View onCreateView(
@@ -31,6 +33,20 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if (getArguments() != null) {
+            noteId = getArguments().getInt("noteId", -1);
+            String title = getArguments().getString("noteTitle");
+            String content = getArguments().getString("noteContent");
+            // We might want to preserve the original timestamp when editing
+            noteTimestamp = getArguments().getLong("noteTimestamp", -1);
+
+            if (noteId != -1) {
+                binding.editTextTitle.setText(title);
+                binding.editTextContent.setText(content);
+                binding.buttonSave.setText("Update Note");
+            }
+        }
+
         binding.buttonSave.setOnClickListener(v -> {
             String title = binding.editTextTitle.getText().toString();
             String content = binding.editTextContent.getText().toString();
@@ -40,9 +56,18 @@ public class SecondFragment extends Fragment {
                 return;
             }
 
-            Note note = new Note(title, content);
             AppDatabase.databaseWriteExecutor.execute(() -> {
-                AppDatabase.getDatabase(getContext()).noteDao().insert(note);
+                AppDatabase db = AppDatabase.getDatabase(getContext());
+                long timestamp = (noteTimestamp != -1) ? noteTimestamp : System.currentTimeMillis();
+                
+                if (noteId == -1) {
+                    db.noteDao().insert(new Note(title, content, timestamp));
+                } else {
+                    Note note = new Note(title, content, timestamp);
+                    note.setId(noteId);
+                    db.noteDao().update(note);
+                }
+                
                 if (getActivity() != null) {
                     getActivity().runOnUiThread(() -> {
                         Toast.makeText(getContext(), R.string.note_saved_message, Toast.LENGTH_SHORT).show();
@@ -51,6 +76,12 @@ public class SecondFragment extends Fragment {
                 }
             });
         });
+
+        // Hide FAB on this screen
+        View fab = requireActivity().findViewById(R.id.fab);
+        if (fab != null) {
+            fab.setVisibility(View.GONE);
+        }
     }
 
     @Override

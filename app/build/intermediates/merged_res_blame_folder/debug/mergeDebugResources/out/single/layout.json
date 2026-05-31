@@ -22,5 +22,9 @@
     {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/content_main.xml",
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/content_main.xml"
+    },
+    {
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/fragment_calendar.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/fragment_calendar.xml"
     }
 ]

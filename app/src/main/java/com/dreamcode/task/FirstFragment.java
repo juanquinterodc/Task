@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.dreamcode.task.databinding.FragmentFirstBinding;
@@ -29,11 +30,21 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         AppDatabase db = AppDatabase.getDatabase(getContext());
-        NoteAdapter adapter = new NoteAdapter(note -> {
-            AppDatabase.databaseWriteExecutor.execute(() -> {
-                db.noteDao().delete(note);
-            });
-        });
+        NoteAdapter adapter = new NoteAdapter(
+                note -> {
+                    AppDatabase.databaseWriteExecutor.execute(() -> {
+                        db.noteDao().delete(note);
+                    });
+                },
+                note -> {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("noteId", note.getId());
+                    bundle.putString("noteTitle", note.getTitle());
+                    bundle.putString("noteContent", note.getContent());
+                    NavHostFragment.findNavController(FirstFragment.this)
+                            .navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+                }
+        );
 
         binding.recyclerViewNotes.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerViewNotes.setAdapter(adapter);

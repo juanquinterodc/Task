@@ -20,6 +20,9 @@ public interface NoteDao {
     @Delete
     void delete(Note note);
 
-    @Query("SELECT * FROM notes ORDER BY id DESC")
+    @Query("SELECT * FROM notes ORDER BY timestamp DESC")
     LiveData<List<Note>> getAllNotes();
+
+    @Query("SELECT * FROM notes WHERE timestamp >= :startOfDay AND timestamp <= :endOfDay ORDER BY timestamp DESC")
+    LiveData<List<Note>> getNotesByDate(long startOfDay, long endOfDay);
 }

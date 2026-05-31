@@ -4,17 +4,7 @@
             "outputFile": "com.dreamcode.task.app-mergeDebugResources-43:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/fc9a84e9236376696d91dc16d9a36ed0/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/f5c825e64b3906a559625dca80782635/transformed/material-1.10.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/cb9547b8ce4876833fcf319a23327a48/transformed/material-1.10.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "4,5,6,7,10,13,16,19",
                         "endColumns": "84,98,86,100,10,10,10,10",
                         "endOffsets": "427,526,613,714,913,1126,1327,1542"
+                    }
+                },
+                {
+                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/796c1c6ec7598bdc4089b5479abf845b/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

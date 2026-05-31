@@ -21,9 +21,35 @@ app:startDestination="@id/FirstFragment" >
     android:label="@string/second_fragment_label"
     tools:layout="@layout/fragment_second" >
 
+    <argument
+        android:name="noteId"
+        android:defaultValue="-1"
+        app:argType="integer" />
+    <argument
+        android:name="noteTitle"
+        android:defaultValue="@null"
+        app:argType="string"
+        app:nullable="true" />
+    <argument
+        android:name="noteContent"
+        android:defaultValue="@null"
+        app:argType="string"
+        app:nullable="true" />
+
     <action
         android:id="@+id/action_SecondFragment_to_FirstFragment"
         app:destination="@id/FirstFragment" />
+
+</fragment>
+<fragment
+    android:id="@+id/CalendarFragment"
+    android:name="com.dreamcode.task.CalendarFragment"
+    android:label="Calendar"
+    tools:layout="@layout/fragment_calendar" >
+
+    <action
+        android:id="@+id/action_CalendarFragment_to_SecondFragment"
+        app:destination="@id/SecondFragment" />
 
 </fragment>
 </navigation>

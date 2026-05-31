@@ -39,7 +39,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `notes` (`id`,`title`,`content`) VALUES (nullif(?, 0),?,?)";
+        return "INSERT OR ABORT INTO `notes` (`id`,`title`,`content`,`timestamp`) VALUES (nullif(?, 0),?,?,?)";
       }
 
       @Override
@@ -55,6 +55,7 @@ public final class NoteDao_Impl implements NoteDao {
         } else {
           statement.bindString(3, entity.getContent());
         }
+        statement.bindLong(4, entity.getTimestamp());
       }
     };
     this.__deletionAdapterOfNote = new EntityDeletionOrUpdateAdapter<Note>(__db) {
@@ -73,7 +74,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ?,`timestamp` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -89,7 +90,8 @@ public final class NoteDao_Impl implements NoteDao {
         } else {
           statement.bindString(3, entity.getContent());
         }
-        statement.bindLong(4, entity.getId());
+        statement.bindLong(4, entity.getTimestamp());
+        statement.bindLong(5, entity.getId());
       }
     };
   }
@@ -132,7 +134,7 @@ public final class NoteDao_Impl implements NoteDao {
 
   @Override
   public LiveData<List<Note>> getAllNotes() {
-    final String _sql = "SELECT * FROM notes ORDER BY id DESC";
+    final String _sql = "SELECT * FROM notes ORDER BY timestamp DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return __db.getInvalidationTracker().createLiveData(new String[] {"notes"}, false, new Callable<List<Note>>() {
       @Override
@@ -143,6 +145,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
+          final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -158,7 +161,63 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpContent = _cursor.getString(_cursorIndexOfContent);
             }
-            _item = new Note(_tmpTitle,_tmpContent);
+            final long _tmpTimestamp;
+            _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
+            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp);
+            final int _tmpId;
+            _tmpId = _cursor.getInt(_cursorIndexOfId);
+            _item.setId(_tmpId);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public LiveData<List<Note>> getNotesByDate(final long startOfDay, final long endOfDay) {
+    final String _sql = "SELECT * FROM notes WHERE timestamp >= ? AND timestamp <= ? ORDER BY timestamp DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, startOfDay);
+    _argIndex = 2;
+    _statement.bindLong(_argIndex, endOfDay);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"notes"}, false, new Callable<List<Note>>() {
+      @Override
+      @Nullable
+      public List<Note> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+          final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
+          final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+          final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final Note _item;
+            final String _tmpTitle;
+            if (_cursor.isNull(_cursorIndexOfTitle)) {
+              _tmpTitle = null;
+            } else {
+              _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+            }
+            final String _tmpContent;
+            if (_cursor.isNull(_cursorIndexOfContent)) {
+              _tmpContent = null;
+            } else {
+              _tmpContent = _cursor.getString(_cursorIndexOfContent);
+            }
+            final long _tmpTimestamp;
+            _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
+            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp);
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
             _item.setId(_tmpId);

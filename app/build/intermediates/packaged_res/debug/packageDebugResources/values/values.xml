@@ -6,7 +6,7 @@
     <color name="company_teal">#00D2D3</color>
     <color name="white">#FFFFFFFF</color>
     <dimen name="fab_margin">16dp</dimen>
-    <string name="about_message">DreamCode Notes v1.0\n\nA simple and elegant way to keep track of your thoughts.\n\nCreated by DreamCode.</string>
+    <string name="about_message">DreamCode Notes v1.0\n\nA simple and elegant way to keep track of your thoughts.\n\nCreated by Juan Quintero.</string>
     <string name="about_title">About DreamCode Notes</string>
     <string name="action_about">About</string>
     <string name="action_settings">Settings</string>

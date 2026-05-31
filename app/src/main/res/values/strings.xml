@@ -15,6 +15,6 @@
     <string name="note_saved_message">Note saved</string>
 
     <string name="about_title">About DreamCode Notes</string>
-    <string name="about_message">DreamCode Notes v1.0\n\nA simple and elegant way to keep track of your thoughts.\n\nCreated by DreamCode.</string>
+    <string name="about_message">DreamCode Notes v1.0\n\nA simple and elegant way to keep track of your thoughts.\n\nCreated by Juan Quintero.</string>
     <string name="ok">OK</string>
 </resources>

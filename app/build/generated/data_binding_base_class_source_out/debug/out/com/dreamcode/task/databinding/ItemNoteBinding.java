@@ -21,7 +21,7 @@ public final class ItemNoteBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final ImageButton buttonDelete;
+  public final ImageButton buttonOptions;
 
   @NonNull
   public final TextView textViewContent;
@@ -29,10 +29,10 @@ public final class ItemNoteBinding implements ViewBinding {
   @NonNull
   public final TextView textViewTitle;
 
-  private ItemNoteBinding(@NonNull CardView rootView, @NonNull ImageButton buttonDelete,
+  private ItemNoteBinding(@NonNull CardView rootView, @NonNull ImageButton buttonOptions,
       @NonNull TextView textViewContent, @NonNull TextView textViewTitle) {
     this.rootView = rootView;
-    this.buttonDelete = buttonDelete;
+    this.buttonOptions = buttonOptions;
     this.textViewContent = textViewContent;
     this.textViewTitle = textViewTitle;
   }
@@ -64,9 +64,9 @@ public final class ItemNoteBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_delete;
-      ImageButton buttonDelete = ViewBindings.findChildViewById(rootView, id);
-      if (buttonDelete == null) {
+      id = R.id.button_options;
+      ImageButton buttonOptions = ViewBindings.findChildViewById(rootView, id);
+      if (buttonOptions == null) {
         break missingId;
       }
 
@@ -82,7 +82,8 @@ public final class ItemNoteBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemNoteBinding((CardView) rootView, buttonDelete, textViewContent, textViewTitle);
+      return new ItemNoteBinding((CardView) rootView, buttonOptions, textViewContent,
+          textViewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
