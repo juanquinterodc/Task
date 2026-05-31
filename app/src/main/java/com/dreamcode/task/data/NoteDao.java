@@ -25,4 +25,10 @@ public interface NoteDao {
 
     @Query("SELECT * FROM notes WHERE timestamp >= :startOfDay AND timestamp <= :endOfDay ORDER BY timestamp DESC")
     LiveData<List<Note>> getNotesByDate(long startOfDay, long endOfDay);
+
+    @Query("SELECT * FROM notes WHERE title LIKE :query OR content LIKE :query ORDER BY timestamp DESC")
+    LiveData<List<Note>> searchNotes(String query);
+
+    @Query("SELECT * FROM notes WHERE category = :category ORDER BY timestamp DESC")
+    LiveData<List<Note>> getNotesByCategory(String category);
 }

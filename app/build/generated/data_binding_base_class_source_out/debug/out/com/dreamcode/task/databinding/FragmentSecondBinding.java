@@ -6,12 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dreamcode.task.R;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,17 +28,48 @@ public final class FragmentSecondBinding implements ViewBinding {
   public final Button buttonSave;
 
   @NonNull
+  public final Chip chipGeneral;
+
+  @NonNull
+  public final ChipGroup chipGroupCategory;
+
+  @NonNull
+  public final Chip chipIdeas;
+
+  @NonNull
+  public final Chip chipPersonal;
+
+  @NonNull
+  public final Chip chipWork;
+
+  @NonNull
   public final EditText editTextContent;
 
   @NonNull
   public final EditText editTextTitle;
 
+  @NonNull
+  public final HorizontalScrollView scrollViewCategories;
+
+  @NonNull
+  public final TextView textViewCategoryLabel;
+
   private FragmentSecondBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonSave,
-      @NonNull EditText editTextContent, @NonNull EditText editTextTitle) {
+      @NonNull Chip chipGeneral, @NonNull ChipGroup chipGroupCategory, @NonNull Chip chipIdeas,
+      @NonNull Chip chipPersonal, @NonNull Chip chipWork, @NonNull EditText editTextContent,
+      @NonNull EditText editTextTitle, @NonNull HorizontalScrollView scrollViewCategories,
+      @NonNull TextView textViewCategoryLabel) {
     this.rootView = rootView;
     this.buttonSave = buttonSave;
+    this.chipGeneral = chipGeneral;
+    this.chipGroupCategory = chipGroupCategory;
+    this.chipIdeas = chipIdeas;
+    this.chipPersonal = chipPersonal;
+    this.chipWork = chipWork;
     this.editTextContent = editTextContent;
     this.editTextTitle = editTextTitle;
+    this.scrollViewCategories = scrollViewCategories;
+    this.textViewCategoryLabel = textViewCategoryLabel;
   }
 
   @Override
@@ -70,6 +105,36 @@ public final class FragmentSecondBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chip_general;
+      Chip chipGeneral = ViewBindings.findChildViewById(rootView, id);
+      if (chipGeneral == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_group_category;
+      ChipGroup chipGroupCategory = ViewBindings.findChildViewById(rootView, id);
+      if (chipGroupCategory == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_ideas;
+      Chip chipIdeas = ViewBindings.findChildViewById(rootView, id);
+      if (chipIdeas == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_personal;
+      Chip chipPersonal = ViewBindings.findChildViewById(rootView, id);
+      if (chipPersonal == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_work;
+      Chip chipWork = ViewBindings.findChildViewById(rootView, id);
+      if (chipWork == null) {
+        break missingId;
+      }
+
       id = R.id.edit_text_content;
       EditText editTextContent = ViewBindings.findChildViewById(rootView, id);
       if (editTextContent == null) {
@@ -82,8 +147,21 @@ public final class FragmentSecondBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSecondBinding((ConstraintLayout) rootView, buttonSave, editTextContent,
-          editTextTitle);
+      id = R.id.scroll_view_categories;
+      HorizontalScrollView scrollViewCategories = ViewBindings.findChildViewById(rootView, id);
+      if (scrollViewCategories == null) {
+        break missingId;
+      }
+
+      id = R.id.text_view_category_label;
+      TextView textViewCategoryLabel = ViewBindings.findChildViewById(rootView, id);
+      if (textViewCategoryLabel == null) {
+        break missingId;
+      }
+
+      return new FragmentSecondBinding((ConstraintLayout) rootView, buttonSave, chipGeneral,
+          chipGroupCategory, chipIdeas, chipPersonal, chipWork, editTextContent, editTextTitle,
+          scrollViewCategories, textViewCategoryLabel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

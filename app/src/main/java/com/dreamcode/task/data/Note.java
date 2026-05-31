@@ -10,11 +10,13 @@ public class Note {
     private String title;
     private String content;
     private long timestamp;
+    private String category;
 
-    public Note(String title, String content, long timestamp) {
+    public Note(String title, String content, long timestamp, String category) {
         this.title = title;
         this.content = content;
         this.timestamp = timestamp;
+        this.category = category;
     }
 
     public int getId() {
@@ -47,5 +49,13 @@ public class Note {
 
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

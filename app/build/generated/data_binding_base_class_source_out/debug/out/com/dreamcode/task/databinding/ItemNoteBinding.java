@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,15 +25,24 @@ public final class ItemNoteBinding implements ViewBinding {
   public final ImageButton buttonOptions;
 
   @NonNull
+  public final LinearLayout layoutContent;
+
+  @NonNull
+  public final TextView textViewCategory;
+
+  @NonNull
   public final TextView textViewContent;
 
   @NonNull
   public final TextView textViewTitle;
 
   private ItemNoteBinding(@NonNull CardView rootView, @NonNull ImageButton buttonOptions,
+      @NonNull LinearLayout layoutContent, @NonNull TextView textViewCategory,
       @NonNull TextView textViewContent, @NonNull TextView textViewTitle) {
     this.rootView = rootView;
     this.buttonOptions = buttonOptions;
+    this.layoutContent = layoutContent;
+    this.textViewCategory = textViewCategory;
     this.textViewContent = textViewContent;
     this.textViewTitle = textViewTitle;
   }
@@ -70,6 +80,18 @@ public final class ItemNoteBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_content;
+      LinearLayout layoutContent = ViewBindings.findChildViewById(rootView, id);
+      if (layoutContent == null) {
+        break missingId;
+      }
+
+      id = R.id.text_view_category;
+      TextView textViewCategory = ViewBindings.findChildViewById(rootView, id);
+      if (textViewCategory == null) {
+        break missingId;
+      }
+
       id = R.id.text_view_content;
       TextView textViewContent = ViewBindings.findChildViewById(rootView, id);
       if (textViewContent == null) {
@@ -82,8 +104,8 @@ public final class ItemNoteBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemNoteBinding((CardView) rootView, buttonOptions, textViewContent,
-          textViewTitle);
+      return new ItemNoteBinding((CardView) rootView, buttonOptions, layoutContent,
+          textViewCategory, textViewContent, textViewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

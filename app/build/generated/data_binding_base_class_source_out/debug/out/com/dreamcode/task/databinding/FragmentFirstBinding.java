@@ -4,13 +4,18 @@ package com.dreamcode.task.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dreamcode.task.R;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,12 +25,51 @@ public final class FragmentFirstBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final MaterialCardView cardSearch;
+
+  @NonNull
+  public final Chip chipAll;
+
+  @NonNull
+  public final Chip chipFilterGeneral;
+
+  @NonNull
+  public final Chip chipFilterIdeas;
+
+  @NonNull
+  public final Chip chipFilterPersonal;
+
+  @NonNull
+  public final Chip chipFilterWork;
+
+  @NonNull
+  public final ChipGroup chipGroupFilter;
+
+  @NonNull
   public final RecyclerView recyclerViewNotes;
 
+  @NonNull
+  public final HorizontalScrollView scrollViewFilters;
+
+  @NonNull
+  public final SearchView searchView;
+
   private FragmentFirstBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RecyclerView recyclerViewNotes) {
+      @NonNull MaterialCardView cardSearch, @NonNull Chip chipAll, @NonNull Chip chipFilterGeneral,
+      @NonNull Chip chipFilterIdeas, @NonNull Chip chipFilterPersonal, @NonNull Chip chipFilterWork,
+      @NonNull ChipGroup chipGroupFilter, @NonNull RecyclerView recyclerViewNotes,
+      @NonNull HorizontalScrollView scrollViewFilters, @NonNull SearchView searchView) {
     this.rootView = rootView;
+    this.cardSearch = cardSearch;
+    this.chipAll = chipAll;
+    this.chipFilterGeneral = chipFilterGeneral;
+    this.chipFilterIdeas = chipFilterIdeas;
+    this.chipFilterPersonal = chipFilterPersonal;
+    this.chipFilterWork = chipFilterWork;
+    this.chipGroupFilter = chipGroupFilter;
     this.recyclerViewNotes = recyclerViewNotes;
+    this.scrollViewFilters = scrollViewFilters;
+    this.searchView = searchView;
   }
 
   @Override
@@ -55,13 +99,69 @@ public final class FragmentFirstBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.card_search;
+      MaterialCardView cardSearch = ViewBindings.findChildViewById(rootView, id);
+      if (cardSearch == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_all;
+      Chip chipAll = ViewBindings.findChildViewById(rootView, id);
+      if (chipAll == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_filter_general;
+      Chip chipFilterGeneral = ViewBindings.findChildViewById(rootView, id);
+      if (chipFilterGeneral == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_filter_ideas;
+      Chip chipFilterIdeas = ViewBindings.findChildViewById(rootView, id);
+      if (chipFilterIdeas == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_filter_personal;
+      Chip chipFilterPersonal = ViewBindings.findChildViewById(rootView, id);
+      if (chipFilterPersonal == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_filter_work;
+      Chip chipFilterWork = ViewBindings.findChildViewById(rootView, id);
+      if (chipFilterWork == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_group_filter;
+      ChipGroup chipGroupFilter = ViewBindings.findChildViewById(rootView, id);
+      if (chipGroupFilter == null) {
+        break missingId;
+      }
+
       id = R.id.recycler_view_notes;
       RecyclerView recyclerViewNotes = ViewBindings.findChildViewById(rootView, id);
       if (recyclerViewNotes == null) {
         break missingId;
       }
 
-      return new FragmentFirstBinding((ConstraintLayout) rootView, recyclerViewNotes);
+      id = R.id.scroll_view_filters;
+      HorizontalScrollView scrollViewFilters = ViewBindings.findChildViewById(rootView, id);
+      if (scrollViewFilters == null) {
+        break missingId;
+      }
+
+      id = R.id.search_view;
+      SearchView searchView = ViewBindings.findChildViewById(rootView, id);
+      if (searchView == null) {
+        break missingId;
+      }
+
+      return new FragmentFirstBinding((ConstraintLayout) rootView, cardSearch, chipAll,
+          chipFilterGeneral, chipFilterIdeas, chipFilterPersonal, chipFilterWork, chipGroupFilter,
+          recyclerViewNotes, scrollViewFilters, searchView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

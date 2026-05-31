@@ -40,6 +40,8 @@ public class CalendarFragment extends Fragment {
                     bundle.putInt("noteId", note.getId());
                     bundle.putString("noteTitle", note.getTitle());
                     bundle.putString("noteContent", note.getContent());
+                    bundle.putString("noteCategory", note.getCategory());
+                    bundle.putLong("noteTimestamp", note.getTimestamp());
                     NavHostFragment.findNavController(CalendarFragment.this)
                             .navigate(R.id.action_CalendarFragment_to_SecondFragment, bundle);
                 }

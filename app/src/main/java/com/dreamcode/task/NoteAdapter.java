@@ -47,6 +47,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         Note currentNote = notes.get(position);
         holder.textViewTitle.setText(currentNote.getTitle());
         holder.textViewContent.setText(currentNote.getContent());
+        holder.textViewCategory.setText(currentNote.getCategory());
         
         holder.buttonOptions.setOnClickListener(v -> {
             PopupMenu popup = new PopupMenu(v.getContext(), v);
@@ -83,12 +84,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     class NoteViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewTitle;
         private TextView textViewContent;
+        private TextView textViewCategory;
         private ImageButton buttonOptions;
 
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.text_view_title);
             textViewContent = itemView.findViewById(R.id.text_view_content);
+            textViewCategory = itemView.findViewById(R.id.text_view_category);
             buttonOptions = itemView.findViewById(R.id.button_options);
         }
     }
