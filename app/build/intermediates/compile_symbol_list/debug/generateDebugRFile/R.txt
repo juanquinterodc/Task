@@ -114,8 +114,11 @@ int mipmap ic_launcher 0x0
 int mipmap ic_launcher_foreground 0x0
 int mipmap ic_launcher_round 0x0
 int navigation nav_graph 0x0
-int string about_message 0x0
+int string about_credits 0x0
+int string about_description 0x0
+int string about_features 0x0
 int string about_title 0x0
+int string about_version 0x0
 int string action_about 0x0
 int string action_settings 0x0
 int string app_name 0x0

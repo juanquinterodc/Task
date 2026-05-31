@@ -115,8 +115,11 @@ mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
-string about_message
+string about_credits
+string about_description
+string about_features
 string about_title
+string about_version
 string action_about
 string action_settings
 string app_name

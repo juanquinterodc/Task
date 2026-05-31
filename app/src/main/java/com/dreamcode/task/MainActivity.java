@@ -3,6 +3,7 @@ package com.dreamcode.task;
 import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -62,7 +63,13 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_FirstFragment_to_SecondFragment);
+                // Navigate to SecondFragment from allowed screens
+                if (navController.getCurrentDestination() != null) {
+                    int currentId = navController.getCurrentDestination().getId();
+                    if (currentId == R.id.FirstFragment || currentId == R.id.CalendarFragment) {
+                        navController.navigate(R.id.SecondFragment);
+                    }
+                }
             }
         });
 
@@ -99,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
             showAboutDialog();
             return true;
         } else if (id == R.id.action_settings) {
-            navController.navigate(R.id.action_FirstFragment_to_SettingsFragment);
+            navController.navigate(R.id.SettingsFragment);
             return true;
         } else if (id == R.id.action_calendar) {
-            if (navController.getCurrentDestination() != null && navController.getCurrentDestination().getId() == R.id.FirstFragment) {
+            if (navController.getCurrentDestination() != null && navController.getCurrentDestination().getId() != R.id.CalendarFragment) {
                 navController.navigate(R.id.CalendarFragment);
             }
             return true;
@@ -118,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             BiometricHelper.showBiometricPrompt(this, new BiometricHelper.BiometricCallback() {
                 @Override
                 public void onAuthenticationSucceeded() {
-                    navController.navigate(R.id.action_FirstFragment_to_SecretNotesFragment);
+                    navController.navigate(R.id.SecretNotesFragment);
                 }
 
                 @Override
@@ -128,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onAuthenticationFailed() {
-                    // Stay silent or show a small hint, biometric prompt handles its own UI usually
                 }
             });
         } else {
@@ -143,14 +149,14 @@ public class MainActivity extends AppCompatActivity {
         if (savedPin != null) {
             showPinEntryDialog(savedPin);
         } else {
-            Toast.makeText(this, "Security access required. Please set a PIN in Settings if biometrics are unavailable.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please set a Vault PIN in Settings to use the secret section.", Toast.LENGTH_LONG).show();
         }
     }
 
     private void showPinEntryDialog(String correctPin) {
         DialogPinEntryBinding pinBinding = DialogPinEntryBinding.inflate(getLayoutInflater());
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Enter Vault PIN")
+                .setTitle("Unlock Vault")
                 .setView(pinBinding.getRoot())
                 .setPositiveButton("Unlock", null)
                 .setNegativeButton("Cancel", null)
@@ -161,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                 String enteredPin = pinBinding.editTextPinEntry.getText().toString();
                 if (enteredPin.equals(correctPin)) {
                     dialog.dismiss();
-                    navController.navigate(R.id.action_FirstFragment_to_SecretNotesFragment);
+                    navController.navigate(R.id.SecretNotesFragment);
                 } else {
                     Toast.makeText(MainActivity.this, "Incorrect PIN", Toast.LENGTH_SHORT).show();
                 }
@@ -171,9 +177,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showAboutDialog() {
+        String versionName = "1.0.0";
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            versionName = pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String aboutMessage = getString(R.string.about_description) + "\n\n" +
+                getString(R.string.about_features) + "\n\n" +
+                getString(R.string.about_version, versionName) + "\n" +
+                getString(R.string.about_credits);
+
         new AlertDialog.Builder(this)
                 .setTitle(R.string.about_title)
-                .setMessage(R.string.about_message)
+                .setMessage(aboutMessage)
                 .setPositiveButton(R.string.ok, null)
                 .show();
     }

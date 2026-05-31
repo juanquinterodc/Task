@@ -39,11 +39,13 @@ public class BiometricHelper {
             }
         });
 
+        // Explicitly set BIOMETRIC_STRONG to ensure compatibility with setNegativeButtonText.
+        // This prevents the IllegalArgumentException: "Negative text must not be set if device credential authentication is allowed."
         BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Secret Vault Access")
                 .setSubtitle("Use your biometric credential to unlock your secret notes")
-                .setNegativeButtonText("Cancel")
-                .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG | BiometricManager.Authenticators.DEVICE_CREDENTIAL)
+                .setNegativeButtonText("Use PIN")
+                .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG)
                 .build();
 
         biometricPrompt.authenticate(promptInfo);
@@ -51,6 +53,8 @@ public class BiometricHelper {
     
     public static boolean isBiometricAvailable(Context context) {
         BiometricManager biometricManager = BiometricManager.from(context);
-        return biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG | BiometricManager.Authenticators.DEVICE_CREDENTIAL) == BiometricManager.BIOMETRIC_SUCCESS;
+        // Check for strong biometrics.
+        int result = biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG);
+        return result == BiometricManager.BIOMETRIC_SUCCESS;
     }
 }
