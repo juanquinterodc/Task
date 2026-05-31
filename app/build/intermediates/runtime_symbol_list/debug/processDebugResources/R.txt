@@ -3941,6 +3941,8 @@ int string about_features 0x7f1200ce
 int string about_title 0x7f12001c
 int string about_version 0x7f1200cf
 int string action_about 0x7f12001d
+int string action_calendar 0x7f1200d0
+int string action_secret_notes 0x7f1200d1
 int string action_settings 0x7f12001e
 int string androidx_startup 0x7f12001f
 int string app_name 0x7f120020

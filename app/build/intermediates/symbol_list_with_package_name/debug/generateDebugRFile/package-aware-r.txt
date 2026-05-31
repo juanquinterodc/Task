@@ -121,6 +121,8 @@ string about_features
 string about_title
 string about_version
 string action_about
+string action_calendar
+string action_secret_notes
 string action_settings
 string app_name
 string empty_fields_error

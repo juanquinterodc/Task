@@ -120,6 +120,8 @@ int string about_features 0x0
 int string about_title 0x0
 int string about_version 0x0
 int string action_about 0x0
+int string action_calendar 0x0
+int string action_secret_notes 0x0
 int string action_settings 0x0
 int string app_name 0x0
 int string empty_fields_error 0x0
