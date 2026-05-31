@@ -76,6 +76,10 @@
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/xml_file_paths.xml.flat",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/xml/file_paths.xml"
+    },
+    {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/layout_fragment_first.xml.flat",
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/fragment_first.xml"
     },
@@ -86,10 +90,6 @@
     {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/layout_fragment_calendar.xml.flat",
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/fragment_calendar.xml"
-    },
-    {
-        "merged": "com.dreamcode.task.app-debug-45:/layout_item_note.xml.flat",
-        "source": "com.dreamcode.task.app-main-47:/layout/item_note.xml"
     },
     {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/mipmap-xhdpi_ic_launcher.webp.flat",
@@ -104,16 +104,20 @@
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/drawable/ic_launcher_background.xml"
     },
     {
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/layout_layout_share_note.xml.flat",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/layout_share_note.xml"
+    },
+    {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/drawable_ic_company_logo.png.flat",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/drawable/ic_company_logo.png"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/drawable_bg_category_tag.xml.flat",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/drawable/bg_category_tag.xml"
     },
     {
-        "merged": "com.dreamcode.task.app-debug-45:/layout_fragment_first.xml.flat",
-        "source": "com.dreamcode.task.app-main-47:/layout/fragment_first.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/drawable_ic_company_logo.png.flat",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/drawable/ic_company_logo.png"
     },
     {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/mipmap-hdpi_ic_launcher.webp.flat",
@@ -128,15 +132,15 @@
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/menu/menu_main.xml"
     },
     {
-        "merged": "com.dreamcode.task.app-debug-45:/drawable_bg_category_tag.xml.flat",
-        "source": "com.dreamcode.task.app-main-47:/drawable/bg_category_tag.xml"
-    },
-    {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/layout_activity_main.xml.flat",
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/activity_main.xml"
     },
     {
         "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-debug-45:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.dreamcode.task.app-debug-45:/layout_fragment_view_note.xml.flat",
+        "source": "com.dreamcode.task.app-main-47:/layout/fragment_view_note.xml"
     }
 ]

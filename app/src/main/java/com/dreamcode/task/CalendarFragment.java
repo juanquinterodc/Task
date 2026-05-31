@@ -12,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.dreamcode.task.data.AppDatabase;
+import com.dreamcode.task.data.Note;
 import com.dreamcode.task.databinding.FragmentCalendarBinding;
 
 import java.util.Calendar;
@@ -42,8 +43,20 @@ public class CalendarFragment extends Fragment {
                     bundle.putString("noteContent", note.getContent());
                     bundle.putString("noteCategory", note.getCategory());
                     bundle.putLong("noteTimestamp", note.getTimestamp());
+                    bundle.putLong("noteReminderTime", note.getReminderTime());
                     NavHostFragment.findNavController(CalendarFragment.this)
                             .navigate(R.id.action_CalendarFragment_to_SecondFragment, bundle);
+                },
+                note -> {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("noteId", note.getId());
+                    bundle.putString("noteTitle", note.getTitle());
+                    bundle.putString("noteContent", note.getContent());
+                    bundle.putString("noteCategory", note.getCategory());
+                    bundle.putLong("noteTimestamp", note.getTimestamp());
+                    bundle.putLong("noteReminderTime", note.getReminderTime());
+                    NavHostFragment.findNavController(CalendarFragment.this)
+                            .navigate(R.id.action_CalendarFragment_to_ViewNoteFragment, bundle);
                 }
         );
 

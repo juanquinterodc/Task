@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:1-45:12
 MERGED from [androidx.databinding:viewbinding:9.0.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/662b561e0f812e394e597b6866cab3ab/transformed/viewbinding-9.0.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/79649263e6e4659716ed81f277d42ce7/transformed/navigation-common-2.6.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.6.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/171976739097e1b15ff116a9fecc0e1d/transformed/navigation-runtime-2.6.0/AndroidManifest.xml:17:1-22:12
@@ -71,9 +71,17 @@ MERGED from [androidx.print:print:1.0.0] /Users/dreamcode/.gradle/caches/9.1.0/t
 		INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:5:22-74
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:5:5-24:19
-INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:5:5-24:19
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:8:5-43:19
+INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:8:5-43:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/cb9547b8ce4876833fcf319a23327a48/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/cb9547b8ce4876833fcf319a23327a48/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/dreamcode/.gradle/caches/9.1.0/transforms/e3d393f1468649de33b346b1ea624b50/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -99,39 +107,63 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/dreamcode/.gradle/ca
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/7df7233e24c152229317ee7682b9038c/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:8:9-54
-	android:roundIcon
 		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:11:9-54
+	android:roundIcon
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:14:9-54
 	android:icon
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:13:9-42
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:16:9-42
 	android:dataExtractionRules
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:10:9-65
 activity#com.dreamcode.task.MainActivity
-ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:14:9-23:20
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:17:9-26:20
 	android:exported
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:16:13-36
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:19:13-36
 	android:theme
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:17:13-46
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:20:13-46
 	android:name
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:15:13-41
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:18:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:18:13-22:29
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:19:17-69
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:19:25-66
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:21:17-77
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:24:27-74
+receiver#com.dreamcode.task.ReminderReceiver
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:28:9-31:40
+	android:enabled
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:30:13-35
+	android:exported
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:29:13-45
+provider#androidx.core.content.FileProvider
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:33:9-41:20
+	android:grantUriPermissions
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:37:13-47
+	android:authorities
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:35:13-66
+	android:exported
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:36:13-37
+	android:name
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:34:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:38:13-40:54
+	android:resource
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:40:17-51
+	android:name
+		ADDED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:39:17-67
 uses-sdk
 INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml

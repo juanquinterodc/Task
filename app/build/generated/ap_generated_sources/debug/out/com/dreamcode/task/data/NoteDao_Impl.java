@@ -39,7 +39,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `notes` (`id`,`title`,`content`,`timestamp`,`category`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR ABORT INTO `notes` (`id`,`title`,`content`,`timestamp`,`category`,`reminderTime`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -61,6 +61,7 @@ public final class NoteDao_Impl implements NoteDao {
         } else {
           statement.bindString(5, entity.getCategory());
         }
+        statement.bindLong(6, entity.getReminderTime());
       }
     };
     this.__deletionAdapterOfNote = new EntityDeletionOrUpdateAdapter<Note>(__db) {
@@ -79,7 +80,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ?,`timestamp` = ?,`category` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ?,`timestamp` = ?,`category` = ?,`reminderTime` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -101,7 +102,8 @@ public final class NoteDao_Impl implements NoteDao {
         } else {
           statement.bindString(5, entity.getCategory());
         }
-        statement.bindLong(6, entity.getId());
+        statement.bindLong(6, entity.getReminderTime());
+        statement.bindLong(7, entity.getId());
       }
     };
   }
@@ -157,6 +159,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
           final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
+          final int _cursorIndexOfReminderTime = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderTime");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -180,7 +183,9 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpCategory = _cursor.getString(_cursorIndexOfCategory);
             }
-            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory);
+            final long _tmpReminderTime;
+            _tmpReminderTime = _cursor.getLong(_cursorIndexOfReminderTime);
+            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory,_tmpReminderTime);
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
             _item.setId(_tmpId);
@@ -218,6 +223,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
           final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
+          final int _cursorIndexOfReminderTime = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderTime");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -241,7 +247,9 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpCategory = _cursor.getString(_cursorIndexOfCategory);
             }
-            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory);
+            final long _tmpReminderTime;
+            _tmpReminderTime = _cursor.getLong(_cursorIndexOfReminderTime);
+            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory,_tmpReminderTime);
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
             _item.setId(_tmpId);
@@ -287,6 +295,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
           final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
+          final int _cursorIndexOfReminderTime = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderTime");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -310,7 +319,9 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpCategory = _cursor.getString(_cursorIndexOfCategory);
             }
-            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory);
+            final long _tmpReminderTime;
+            _tmpReminderTime = _cursor.getLong(_cursorIndexOfReminderTime);
+            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory,_tmpReminderTime);
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
             _item.setId(_tmpId);
@@ -350,6 +361,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
           final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
+          final int _cursorIndexOfReminderTime = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderTime");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -373,7 +385,9 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpCategory = _cursor.getString(_cursorIndexOfCategory);
             }
-            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory);
+            final long _tmpReminderTime;
+            _tmpReminderTime = _cursor.getLong(_cursorIndexOfReminderTime);
+            _item = new Note(_tmpTitle,_tmpContent,_tmpTimestamp,_tmpCategory,_tmpReminderTime);
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
             _item.setId(_tmpId);

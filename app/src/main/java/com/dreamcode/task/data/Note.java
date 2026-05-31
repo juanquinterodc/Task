@@ -11,12 +11,14 @@ public class Note {
     private String content;
     private long timestamp;
     private String category;
+    private long reminderTime; // Time in milliseconds for the reminder
 
-    public Note(String title, String content, long timestamp, String category) {
+    public Note(String title, String content, long timestamp, String category, long reminderTime) {
         this.title = title;
         this.content = content;
         this.timestamp = timestamp;
         this.category = category;
+        this.reminderTime = reminderTime;
     }
 
     public int getId() {
@@ -57,5 +59,13 @@ public class Note {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public long getReminderTime() {
+        return reminderTime;
+    }
+
+    public void setReminderTime(long reminderTime) {
+        this.reminderTime = reminderTime;
     }
 }

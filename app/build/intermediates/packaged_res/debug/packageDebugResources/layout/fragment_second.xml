@@ -76,6 +76,43 @@
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 
+    <Button
+        android:id="@+id/button_set_reminder"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Set Reminder"
+        android:textColor="@color/company_teal"
+        app:icon="@android:drawable/ic_lock_idle_alarm"
+        app:iconTint="@color/company_teal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scroll_view_categories" />
+
+    <ImageButton
+        android:id="@+id/button_remove_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/button_set_reminder"
+        app:layout_constraintStart_toEndOf="@id/button_set_reminder"
+        app:layout_constraintTop_toTopOf="@id/button_set_reminder"
+        app:tint="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/text_view_reminder_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="No reminder set"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/button_set_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_remove_reminder"
+        app:layout_constraintTop_toTopOf="@id/button_set_reminder" />
+
     <EditText
         android:id="@+id/edit_text_content"
         android:layout_width="0dp"
@@ -87,7 +124,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scroll_view_categories" />
+        app:layout_constraintTop_toBottomOf="@id/button_set_reminder" />
 
     <Button
         android:id="@+id/button_save"

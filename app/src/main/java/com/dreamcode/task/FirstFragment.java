@@ -51,18 +51,28 @@ public class FirstFragment extends Fragment {
                     bundle.putString("noteContent", note.getContent());
                     bundle.putString("noteCategory", note.getCategory());
                     bundle.putLong("noteTimestamp", note.getTimestamp());
+                    bundle.putLong("noteReminderTime", note.getReminderTime());
                     NavHostFragment.findNavController(FirstFragment.this)
                             .navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+                },
+                note -> {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("noteId", note.getId());
+                    bundle.putString("noteTitle", note.getTitle());
+                    bundle.putString("noteContent", note.getContent());
+                    bundle.putString("noteCategory", note.getCategory());
+                    bundle.putLong("noteTimestamp", note.getTimestamp());
+                    bundle.putLong("noteReminderTime", note.getReminderTime());
+                    NavHostFragment.findNavController(FirstFragment.this)
+                            .navigate(R.id.action_FirstFragment_to_ViewNoteFragment, bundle);
                 }
         );
         
         binding.recyclerViewNotes.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerViewNotes.setAdapter(adapter);
 
-        // Initial observation: All notes
         observeNotes(db.noteDao().getAllNotes());
 
-        // Search logic
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -77,7 +87,6 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        // Filter logic
         binding.chipGroupFilter.setOnCheckedStateChangeListener((group, checkedIds) -> {
             if (checkedIds.isEmpty()) return;
             int checkedId = checkedIds.get(0);

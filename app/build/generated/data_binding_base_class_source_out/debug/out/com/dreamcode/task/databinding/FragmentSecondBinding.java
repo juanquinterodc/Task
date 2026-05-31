@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,7 +26,13 @@ public final class FragmentSecondBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageButton buttonRemoveReminder;
+
+  @NonNull
   public final Button buttonSave;
+
+  @NonNull
+  public final Button buttonSetReminder;
 
   @NonNull
   public final Chip chipGeneral;
@@ -54,13 +61,20 @@ public final class FragmentSecondBinding implements ViewBinding {
   @NonNull
   public final TextView textViewCategoryLabel;
 
-  private FragmentSecondBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonSave,
-      @NonNull Chip chipGeneral, @NonNull ChipGroup chipGroupCategory, @NonNull Chip chipIdeas,
-      @NonNull Chip chipPersonal, @NonNull Chip chipWork, @NonNull EditText editTextContent,
-      @NonNull EditText editTextTitle, @NonNull HorizontalScrollView scrollViewCategories,
-      @NonNull TextView textViewCategoryLabel) {
+  @NonNull
+  public final TextView textViewReminderInfo;
+
+  private FragmentSecondBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ImageButton buttonRemoveReminder, @NonNull Button buttonSave,
+      @NonNull Button buttonSetReminder, @NonNull Chip chipGeneral,
+      @NonNull ChipGroup chipGroupCategory, @NonNull Chip chipIdeas, @NonNull Chip chipPersonal,
+      @NonNull Chip chipWork, @NonNull EditText editTextContent, @NonNull EditText editTextTitle,
+      @NonNull HorizontalScrollView scrollViewCategories, @NonNull TextView textViewCategoryLabel,
+      @NonNull TextView textViewReminderInfo) {
     this.rootView = rootView;
+    this.buttonRemoveReminder = buttonRemoveReminder;
     this.buttonSave = buttonSave;
+    this.buttonSetReminder = buttonSetReminder;
     this.chipGeneral = chipGeneral;
     this.chipGroupCategory = chipGroupCategory;
     this.chipIdeas = chipIdeas;
@@ -70,6 +84,7 @@ public final class FragmentSecondBinding implements ViewBinding {
     this.editTextTitle = editTextTitle;
     this.scrollViewCategories = scrollViewCategories;
     this.textViewCategoryLabel = textViewCategoryLabel;
+    this.textViewReminderInfo = textViewReminderInfo;
   }
 
   @Override
@@ -99,9 +114,21 @@ public final class FragmentSecondBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_remove_reminder;
+      ImageButton buttonRemoveReminder = ViewBindings.findChildViewById(rootView, id);
+      if (buttonRemoveReminder == null) {
+        break missingId;
+      }
+
       id = R.id.button_save;
       Button buttonSave = ViewBindings.findChildViewById(rootView, id);
       if (buttonSave == null) {
+        break missingId;
+      }
+
+      id = R.id.button_set_reminder;
+      Button buttonSetReminder = ViewBindings.findChildViewById(rootView, id);
+      if (buttonSetReminder == null) {
         break missingId;
       }
 
@@ -159,9 +186,16 @@ public final class FragmentSecondBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSecondBinding((ConstraintLayout) rootView, buttonSave, chipGeneral,
-          chipGroupCategory, chipIdeas, chipPersonal, chipWork, editTextContent, editTextTitle,
-          scrollViewCategories, textViewCategoryLabel);
+      id = R.id.text_view_reminder_info;
+      TextView textViewReminderInfo = ViewBindings.findChildViewById(rootView, id);
+      if (textViewReminderInfo == null) {
+        break missingId;
+      }
+
+      return new FragmentSecondBinding((ConstraintLayout) rootView, buttonRemoveReminder,
+          buttonSave, buttonSetReminder, chipGeneral, chipGroupCategory, chipIdeas, chipPersonal,
+          chipWork, editTextContent, editTextTitle, scrollViewCategories, textViewCategoryLabel,
+          textViewReminderInfo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

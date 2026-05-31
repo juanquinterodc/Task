@@ -13,6 +13,9 @@ app:startDestination="@id/FirstFragment" >
     <action
         android:id="@+id/action_FirstFragment_to_SecondFragment"
         app:destination="@id/SecondFragment" />
+    <action
+        android:id="@+id/action_FirstFragment_to_ViewNoteFragment"
+        app:destination="@id/ViewNoteFragment" />
 
 </fragment>
 <fragment
@@ -35,6 +38,19 @@ app:startDestination="@id/FirstFragment" >
         android:defaultValue="@null"
         app:argType="string"
         app:nullable="true" />
+    <argument
+        android:name="noteCategory"
+        android:defaultValue="@null"
+        app:argType="string"
+        app:nullable="true" />
+    <argument
+        android:name="noteTimestamp"
+        android:defaultValue="-1L"
+        app:argType="long" />
+    <argument
+        android:name="noteReminderTime"
+        android:defaultValue="-1L"
+        app:argType="long" />
 
     <action
         android:id="@+id/action_SecondFragment_to_FirstFragment"
@@ -49,6 +65,39 @@ app:startDestination="@id/FirstFragment" >
 
     <action
         android:id="@+id/action_CalendarFragment_to_SecondFragment"
+        app:destination="@id/SecondFragment" />
+    <action
+        android:id="@+id/action_CalendarFragment_to_ViewNoteFragment"
+        app:destination="@id/ViewNoteFragment" />
+
+</fragment>
+<fragment
+    android:id="@+id/ViewNoteFragment"
+    android:name="com.dreamcode.task.ViewNoteFragment"
+    android:label="View Note"
+    tools:layout="@layout/fragment_view_note" >
+
+    <argument
+        android:name="noteId"
+        app:argType="integer" />
+    <argument
+        android:name="noteTitle"
+        app:argType="string" />
+    <argument
+        android:name="noteContent"
+        app:argType="string" />
+    <argument
+        android:name="noteCategory"
+        app:argType="string" />
+    <argument
+        android:name="noteTimestamp"
+        app:argType="long" />
+    <argument
+        android:name="noteReminderTime"
+        app:argType="long" />
+
+    <action
+        android:id="@+id/action_ViewNoteFragment_to_SecondFragment"
         app:destination="@id/SecondFragment" />
 
 </fragment>
