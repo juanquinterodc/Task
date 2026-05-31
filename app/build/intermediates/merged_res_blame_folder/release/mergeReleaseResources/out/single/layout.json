@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.dreamcode.task.app-mergeReleaseResources-44:/layout/content_main.xml",
+        "source": "com.dreamcode.task.app-main-46:/layout/content_main.xml"
+    },
+    {
+        "merged": "com.dreamcode.task.app-mergeReleaseResources-44:/layout/fragment_first.xml",
+        "source": "com.dreamcode.task.app-main-46:/layout/fragment_first.xml"
+    },
+    {
+        "merged": "com.dreamcode.task.app-mergeReleaseResources-44:/layout/item_note.xml",
+        "source": "com.dreamcode.task.app-main-46:/layout/item_note.xml"
+    },
+    {
+        "merged": "com.dreamcode.task.app-mergeReleaseResources-44:/layout/activity_main.xml",
+        "source": "com.dreamcode.task.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.dreamcode.task.app-mergeReleaseResources-44:/layout/fragment_second.xml",
+        "source": "com.dreamcode.task.app-main-46:/layout/fragment_second.xml"
+    }
+]

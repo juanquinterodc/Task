@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DreamCode Notes</string>
+    <string name="action_about">About</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">DreamCode Notes</string>
+    <string name="second_fragment_label">Add Note</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="save_note">Save Note</string>
+    <string name="note_title_hint">Title</string>
+    <string name="note_content_hint">Note content</string>
+    <string name="empty_fields_error">Please enter title and content</string>
+    <string name="note_saved_message">Note saved</string>
+
+    <string name="about_title">About DreamCode Notes</string>
+    <string name="about_message">DreamCode Notes v1.0\n\nA simple and elegant way to keep track of your thoughts.\n\nCreated by DreamCode.</string>
+    <string name="ok">OK</string>
+</resources>
