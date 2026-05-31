@@ -15,8 +15,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dreamcode.task.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.materialswitch.MaterialSwitch;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,13 +29,22 @@ public final class FragmentSecondBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final MaterialButton buttonBold;
+
+  @NonNull
+  public final MaterialButton buttonItalic;
+
+  @NonNull
   public final ImageButton buttonRemoveReminder;
 
   @NonNull
   public final Button buttonSave;
 
   @NonNull
-  public final Button buttonSetReminder;
+  public final ImageButton buttonSetReminder;
+
+  @NonNull
+  public final MaterialCardView cardToolbar;
 
   @NonNull
   public final Chip chipGeneral;
@@ -59,22 +71,33 @@ public final class FragmentSecondBinding implements ViewBinding {
   public final HorizontalScrollView scrollViewCategories;
 
   @NonNull
+  public final MaterialSwitch switchChecklist;
+
+  @NonNull
+  public final MaterialSwitch switchSecret;
+
+  @NonNull
   public final TextView textViewCategoryLabel;
 
   @NonNull
   public final TextView textViewReminderInfo;
 
   private FragmentSecondBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton buttonBold, @NonNull MaterialButton buttonItalic,
       @NonNull ImageButton buttonRemoveReminder, @NonNull Button buttonSave,
-      @NonNull Button buttonSetReminder, @NonNull Chip chipGeneral,
-      @NonNull ChipGroup chipGroupCategory, @NonNull Chip chipIdeas, @NonNull Chip chipPersonal,
-      @NonNull Chip chipWork, @NonNull EditText editTextContent, @NonNull EditText editTextTitle,
-      @NonNull HorizontalScrollView scrollViewCategories, @NonNull TextView textViewCategoryLabel,
-      @NonNull TextView textViewReminderInfo) {
+      @NonNull ImageButton buttonSetReminder, @NonNull MaterialCardView cardToolbar,
+      @NonNull Chip chipGeneral, @NonNull ChipGroup chipGroupCategory, @NonNull Chip chipIdeas,
+      @NonNull Chip chipPersonal, @NonNull Chip chipWork, @NonNull EditText editTextContent,
+      @NonNull EditText editTextTitle, @NonNull HorizontalScrollView scrollViewCategories,
+      @NonNull MaterialSwitch switchChecklist, @NonNull MaterialSwitch switchSecret,
+      @NonNull TextView textViewCategoryLabel, @NonNull TextView textViewReminderInfo) {
     this.rootView = rootView;
+    this.buttonBold = buttonBold;
+    this.buttonItalic = buttonItalic;
     this.buttonRemoveReminder = buttonRemoveReminder;
     this.buttonSave = buttonSave;
     this.buttonSetReminder = buttonSetReminder;
+    this.cardToolbar = cardToolbar;
     this.chipGeneral = chipGeneral;
     this.chipGroupCategory = chipGroupCategory;
     this.chipIdeas = chipIdeas;
@@ -83,6 +106,8 @@ public final class FragmentSecondBinding implements ViewBinding {
     this.editTextContent = editTextContent;
     this.editTextTitle = editTextTitle;
     this.scrollViewCategories = scrollViewCategories;
+    this.switchChecklist = switchChecklist;
+    this.switchSecret = switchSecret;
     this.textViewCategoryLabel = textViewCategoryLabel;
     this.textViewReminderInfo = textViewReminderInfo;
   }
@@ -114,6 +139,18 @@ public final class FragmentSecondBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_bold;
+      MaterialButton buttonBold = ViewBindings.findChildViewById(rootView, id);
+      if (buttonBold == null) {
+        break missingId;
+      }
+
+      id = R.id.button_italic;
+      MaterialButton buttonItalic = ViewBindings.findChildViewById(rootView, id);
+      if (buttonItalic == null) {
+        break missingId;
+      }
+
       id = R.id.button_remove_reminder;
       ImageButton buttonRemoveReminder = ViewBindings.findChildViewById(rootView, id);
       if (buttonRemoveReminder == null) {
@@ -127,8 +164,14 @@ public final class FragmentSecondBinding implements ViewBinding {
       }
 
       id = R.id.button_set_reminder;
-      Button buttonSetReminder = ViewBindings.findChildViewById(rootView, id);
+      ImageButton buttonSetReminder = ViewBindings.findChildViewById(rootView, id);
       if (buttonSetReminder == null) {
+        break missingId;
+      }
+
+      id = R.id.card_toolbar;
+      MaterialCardView cardToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (cardToolbar == null) {
         break missingId;
       }
 
@@ -180,6 +223,18 @@ public final class FragmentSecondBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.switch_checklist;
+      MaterialSwitch switchChecklist = ViewBindings.findChildViewById(rootView, id);
+      if (switchChecklist == null) {
+        break missingId;
+      }
+
+      id = R.id.switch_secret;
+      MaterialSwitch switchSecret = ViewBindings.findChildViewById(rootView, id);
+      if (switchSecret == null) {
+        break missingId;
+      }
+
       id = R.id.text_view_category_label;
       TextView textViewCategoryLabel = ViewBindings.findChildViewById(rootView, id);
       if (textViewCategoryLabel == null) {
@@ -192,9 +247,10 @@ public final class FragmentSecondBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSecondBinding((ConstraintLayout) rootView, buttonRemoveReminder,
-          buttonSave, buttonSetReminder, chipGeneral, chipGroupCategory, chipIdeas, chipPersonal,
-          chipWork, editTextContent, editTextTitle, scrollViewCategories, textViewCategoryLabel,
+      return new FragmentSecondBinding((ConstraintLayout) rootView, buttonBold, buttonItalic,
+          buttonRemoveReminder, buttonSave, buttonSetReminder, cardToolbar, chipGeneral,
+          chipGroupCategory, chipIdeas, chipPersonal, chipWork, editTextContent, editTextTitle,
+          scrollViewCategories, switchChecklist, switchSecret, textViewCategoryLabel,
           textViewReminderInfo);
     }
     String missingId = rootView.getResources().getResourceName(id);

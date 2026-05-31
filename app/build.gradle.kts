@@ -43,6 +43,8 @@ dependencies {
     
     implementation(libs.room.runtime)
     annotationProcessor(libs.room.compiler)
+    
+    implementation(libs.biometric)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

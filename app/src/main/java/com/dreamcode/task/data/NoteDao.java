@@ -20,15 +20,18 @@ public interface NoteDao {
     @Delete
     void delete(Note note);
 
-    @Query("SELECT * FROM notes ORDER BY timestamp DESC")
+    @Query("SELECT * FROM notes WHERE isSecret = 0 ORDER BY timestamp DESC")
     LiveData<List<Note>> getAllNotes();
 
-    @Query("SELECT * FROM notes WHERE timestamp >= :startOfDay AND timestamp <= :endOfDay ORDER BY timestamp DESC")
+    @Query("SELECT * FROM notes WHERE isSecret = 1 ORDER BY timestamp DESC")
+    LiveData<List<Note>> getSecretNotes();
+
+    @Query("SELECT * FROM notes WHERE timestamp >= :startOfDay AND timestamp <= :endOfDay AND isSecret = 0 ORDER BY timestamp DESC")
     LiveData<List<Note>> getNotesByDate(long startOfDay, long endOfDay);
 
-    @Query("SELECT * FROM notes WHERE title LIKE :query OR content LIKE :query ORDER BY timestamp DESC")
+    @Query("SELECT * FROM notes WHERE (title LIKE :query OR content LIKE :query) AND isSecret = 0 ORDER BY timestamp DESC")
     LiveData<List<Note>> searchNotes(String query);
 
-    @Query("SELECT * FROM notes WHERE category = :category ORDER BY timestamp DESC")
+    @Query("SELECT * FROM notes WHERE category = :category AND isSecret = 0 ORDER BY timestamp DESC")
     LiveData<List<Note>> getNotesByCategory(String category);
 }

@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_FirstFragment_to_ViewNoteFragment"
             app:destination="@id/ViewNoteFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_SecretNotesFragment"
+            app:destination="@id/SecretNotesFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_SettingsFragment"
+            app:destination="@id/SettingsFragment" />
     </fragment>
 
     <fragment
@@ -50,6 +56,14 @@
             android:name="noteReminderTime"
             app:argType="long"
             android:defaultValue="-1L" />
+        <argument
+            android:name="noteIsChecklist"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="noteIsSecret"
+            app:argType="boolean"
+            android:defaultValue="false" />
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
@@ -91,8 +105,35 @@
         <argument
             android:name="noteReminderTime"
             app:argType="long" />
+        <argument
+            android:name="noteIsChecklist"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="noteIsSecret"
+            app:argType="boolean"
+            android:defaultValue="false" />
         <action
             android:id="@+id/action_ViewNoteFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/SecretNotesFragment"
+        android:name="com.dreamcode.task.SecretNotesFragment"
+        android:label="Secret Vault"
+        tools:layout="@layout/fragment_secret_notes">
+        <action
+            android:id="@+id/action_SecretNotesFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_SecretNotesFragment_to_ViewNoteFragment"
+            app:destination="@id/ViewNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.dreamcode.task.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

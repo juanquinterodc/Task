@@ -6,10 +6,12 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.net.Uri;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,8 +66,27 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         Note currentNote = notes.get(position);
         holder.textViewTitle.setText(currentNote.getTitle());
-        holder.textViewContent.setText(currentNote.getContent());
+        
+        // Fix: Properly strip HTML tags and checklist markers for a clean plain-text preview in the list
+        if (currentNote.getContent() != null) {
+            String content = currentNote.getContent();
+            // Use Html.fromHtml to handle entities, then regex to strip remaining tags for list preview
+            String plainText = Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY).toString();
+            // Remove checklist markers from preview for a cleaner look
+            plainText = plainText.replace("☐ ", "").replace("☑ ", "").trim();
+            // Final safety regex to ensure no raw tags are visible
+            plainText = plainText.replaceAll("<[^>]*>", "");
+            holder.textViewContent.setText(plainText);
+        }
+        
         holder.textViewCategory.setText(currentNote.getCategory());
+        
+        // Show/hide secret lock icon
+        if (currentNote.isSecret()) {
+            holder.imageViewSecretLock.setVisibility(View.VISIBLE);
+        } else {
+            holder.imageViewSecretLock.setVisibility(View.GONE);
+        }
         
         holder.itemView.setOnClickListener(v -> {
             if (itemClickListener != null) {
@@ -113,7 +134,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     }
 
     private void shareNoteAsText(Context context, Note note) {
-        String shareText = note.getTitle() + "\n\n" + note.getContent();
+        // Strip HTML tags for shared text as well
+        String plainText = Html.fromHtml(note.getContent(), Html.FROM_HTML_MODE_LEGACY).toString();
+        String shareText = note.getTitle() + "\n\n" + plainText;
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, shareText);
@@ -124,7 +147,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     private void shareNoteAsImage(Context context, Note note) {
         View shareView = LayoutInflater.from(context).inflate(R.layout.layout_share_note, null);
         ((TextView) shareView.findViewById(R.id.share_title)).setText(note.getTitle());
-        ((TextView) shareView.findViewById(R.id.share_content)).setText(note.getContent());
+        String plainText = Html.fromHtml(note.getContent(), Html.FROM_HTML_MODE_LEGACY).toString();
+        ((TextView) shareView.findViewById(R.id.share_content)).setText(plainText);
 
         shareView.measure(View.MeasureSpec.makeMeasureSpec(1000, View.MeasureSpec.EXACTLY),
                 View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
@@ -172,6 +196,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         private TextView textViewContent;
         private TextView textViewCategory;
         private ImageButton buttonOptions;
+        private ImageView imageViewSecretLock;
 
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -179,6 +204,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             textViewContent = itemView.findViewById(R.id.text_view_content);
             textViewCategory = itemView.findViewById(R.id.text_view_category);
             buttonOptions = itemView.findViewById(R.id.button_options);
+            imageViewSecretLock = itemView.findViewById(R.id.image_view_secret_lock);
         }
     }
 }

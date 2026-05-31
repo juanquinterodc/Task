@@ -1,38 +1,46 @@
 [
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/fragment_second.xml",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/fragment_second.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/item_note.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/item_note.xml"
     },
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/fragment_first.xml",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/fragment_first.xml"
+        "merged": "com.dreamcode.task.app-mergeDebugResources-45:/layout/dialog_pin_entry.xml",
+        "source": "com.dreamcode.task.app-main-48:/layout/dialog_pin_entry.xml"
     },
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/item_note.xml",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/item_note.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/fragment_view_note.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/fragment_view_note.xml"
     },
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/layout_share_note.xml",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/layout_share_note.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/fragment_secret_notes.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/fragment_secret_notes.xml"
     },
     {
-        "merged": "com.dreamcode.task.app-mergeDebugResources-44:/layout/fragment_view_note.xml",
-        "source": "com.dreamcode.task.app-main-47:/layout/fragment_view_note.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/fragment_second.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/fragment_second.xml"
     },
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/activity_main.xml",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/activity_main.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/layout_share_note.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/layout_share_note.xml"
     },
     {
-        "merged": "com.dreamcode.task.app-mergeDebugResources-44:/layout/fragment_second.xml",
-        "source": "com.dreamcode.task.app-main-47:/layout/fragment_second.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/activity_main.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/content_main.xml",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/content_main.xml"
+        "merged": "com.dreamcode.task.app-mergeDebugResources-45:/layout/fragment_settings.xml",
+        "source": "com.dreamcode.task.app-main-48:/layout/fragment_settings.xml"
     },
     {
-        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-44:/layout/fragment_calendar.xml",
-        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-47:/layout/fragment_calendar.xml"
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/content_main.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/content_main.xml"
+    },
+    {
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/fragment_calendar.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/fragment_calendar.xml"
+    },
+    {
+        "merged": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-mergeDebugResources-45:/layout/fragment_first.xml",
+        "source": "/Users/dreamcode/.gradle/daemon/9.1.0/com.dreamcode.task.app-main-48:/layout/fragment_first.xml"
     }
 ]

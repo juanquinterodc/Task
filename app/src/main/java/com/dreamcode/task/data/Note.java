@@ -11,14 +11,18 @@ public class Note {
     private String content;
     private long timestamp;
     private String category;
-    private long reminderTime; // Time in milliseconds for the reminder
+    private long reminderTime;
+    private boolean isChecklist;
+    private boolean isSecret;
 
-    public Note(String title, String content, long timestamp, String category, long reminderTime) {
+    public Note(String title, String content, long timestamp, String category, long reminderTime, boolean isChecklist, boolean isSecret) {
         this.title = title;
         this.content = content;
         this.timestamp = timestamp;
         this.category = category;
         this.reminderTime = reminderTime;
+        this.isChecklist = isChecklist;
+        this.isSecret = isSecret;
     }
 
     public int getId() {
@@ -67,5 +71,21 @@ public class Note {
 
     public void setReminderTime(long reminderTime) {
         this.reminderTime = reminderTime;
+    }
+
+    public boolean isChecklist() {
+        return isChecklist;
+    }
+
+    public void setChecklist(boolean checklist) {
+        isChecklist = checklist;
+    }
+
+    public boolean isSecret() {
+        return isSecret;
+    }
+
+    public void setSecret(boolean secret) {
+        isSecret = secret;
     }
 }

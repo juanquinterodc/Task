@@ -45,24 +45,12 @@ public class FirstFragment extends Fragment {
                     });
                 },
                 note -> {
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("noteId", note.getId());
-                    bundle.putString("noteTitle", note.getTitle());
-                    bundle.putString("noteContent", note.getContent());
-                    bundle.putString("noteCategory", note.getCategory());
-                    bundle.putLong("noteTimestamp", note.getTimestamp());
-                    bundle.putLong("noteReminderTime", note.getReminderTime());
+                    Bundle bundle = createNoteBundle(note);
                     NavHostFragment.findNavController(FirstFragment.this)
                             .navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
                 },
                 note -> {
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("noteId", note.getId());
-                    bundle.putString("noteTitle", note.getTitle());
-                    bundle.putString("noteContent", note.getContent());
-                    bundle.putString("noteCategory", note.getCategory());
-                    bundle.putLong("noteTimestamp", note.getTimestamp());
-                    bundle.putLong("noteReminderTime", note.getReminderTime());
+                    Bundle bundle = createNoteBundle(note);
                     NavHostFragment.findNavController(FirstFragment.this)
                             .navigate(R.id.action_FirstFragment_to_ViewNoteFragment, bundle);
                 }
@@ -102,6 +90,19 @@ public class FirstFragment extends Fragment {
                 observeNotes(db.noteDao().getNotesByCategory("Ideas"));
             }
         });
+    }
+
+    private Bundle createNoteBundle(Note note) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("noteId", note.getId());
+        bundle.putString("noteTitle", note.getTitle());
+        bundle.putString("noteContent", note.getContent());
+        bundle.putString("noteCategory", note.getCategory());
+        bundle.putLong("noteTimestamp", note.getTimestamp());
+        bundle.putLong("noteReminderTime", note.getReminderTime());
+        bundle.putBoolean("noteIsChecklist", note.isChecklist());
+        bundle.putBoolean("noteIsSecret", note.isSecret());
+        return bundle;
     }
 
     private void searchNotes(String query) {

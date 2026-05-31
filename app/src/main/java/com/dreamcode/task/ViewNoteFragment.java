@@ -6,9 +6,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +39,8 @@ public class ViewNoteFragment extends Fragment {
     private String noteCategory;
     private long noteTimestamp;
     private long noteReminderTime;
+    private boolean noteIsChecklist;
+    private boolean noteIsSecret;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,10 +59,13 @@ public class ViewNoteFragment extends Fragment {
             noteCategory = getArguments().getString("noteCategory");
             noteTimestamp = getArguments().getLong("noteTimestamp");
             noteReminderTime = getArguments().getLong("noteReminderTime");
+            noteIsChecklist = getArguments().getBoolean("noteIsChecklist");
+            noteIsSecret = getArguments().getBoolean("noteIsSecret");
 
             binding.textViewViewTitle.setText(noteTitle);
-            binding.textViewViewContent.setText(noteContent);
             binding.textViewViewCategory.setText(noteCategory);
+            
+            loadContent();
         }
 
         binding.buttonViewEdit.setOnClickListener(v -> {
@@ -68,6 +76,8 @@ public class ViewNoteFragment extends Fragment {
             bundle.putString("noteCategory", noteCategory);
             bundle.putLong("noteTimestamp", noteTimestamp);
             bundle.putLong("noteReminderTime", noteReminderTime);
+            bundle.putBoolean("noteIsChecklist", noteIsChecklist);
+            bundle.putBoolean("noteIsSecret", noteIsSecret);
             NavHostFragment.findNavController(this).navigate(R.id.action_ViewNoteFragment_to_SecondFragment, bundle);
         });
 
@@ -79,12 +89,12 @@ public class ViewNoteFragment extends Fragment {
                     .setMessage("Are you sure you want to delete this note?")
                     .setPositiveButton("Delete", (dialog, which) -> {
                         AppDatabase.databaseWriteExecutor.execute(() -> {
-                            Note note = new Note(noteTitle, noteContent, noteTimestamp, noteCategory, noteReminderTime);
+                            Note note = new Note(noteTitle, noteContent, noteTimestamp, noteCategory, noteReminderTime, noteIsChecklist, noteIsSecret);
                             note.setId(noteId);
                             AppDatabase.getDatabase(getContext()).noteDao().delete(note);
                             if (getActivity() != null) {
                                 getActivity().runOnUiThread(() -> {
-                                    NavHostFragment.findNavController(this).popBackStack();
+                                    NavHostFragment.findNavController(this).popBackStack(R.id.FirstFragment, false);
                                 });
                             }
                         });
@@ -93,11 +103,64 @@ public class ViewNoteFragment extends Fragment {
                     .show();
         });
 
-        // Hide FAB in this screen
         View fab = requireActivity().findViewById(R.id.fab);
-        if (fab != null) {
-            fab.setVisibility(View.GONE);
+        if (fab != null) fab.setVisibility(View.GONE);
+    }
+
+    private void loadContent() {
+        if (noteContent != null) {
+            if (noteIsChecklist) {
+                binding.textViewViewContent.setVisibility(View.GONE);
+                binding.layoutChecklistItems.setVisibility(View.VISIBLE);
+                renderChecklist(noteContent);
+            } else {
+                binding.textViewViewContent.setVisibility(View.VISIBLE);
+                binding.layoutChecklistItems.setVisibility(View.GONE);
+                binding.textViewViewContent.setText(Html.fromHtml(noteContent, Html.FROM_HTML_MODE_LEGACY));
+            }
         }
+    }
+
+    private void renderChecklist(String htmlContent) {
+        binding.layoutChecklistItems.removeAllViews();
+        String plainText = Html.fromHtml(htmlContent, Html.FROM_HTML_MODE_LEGACY).toString();
+        String[] lines = plainText.split("\n");
+        
+        for (String line : lines) {
+            if (line.trim().isEmpty()) continue;
+            
+            boolean isChecked = line.startsWith("☑");
+            String itemText = line.replace("☐ ", "").replace("☑ ", "").trim();
+            
+            CheckBox cb = new CheckBox(getContext());
+            cb.setText(itemText);
+            cb.setChecked(isChecked);
+            cb.setPadding(8, 16, 8, 16);
+            
+            cb.setOnCheckedChangeListener((buttonView, checked) -> {
+                updateChecklistState();
+            });
+            
+            binding.layoutChecklistItems.addView(cb);
+        }
+    }
+
+    private void updateChecklistState() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < binding.layoutChecklistItems.getChildCount(); i++) {
+            CheckBox cb = (CheckBox) binding.layoutChecklistItems.getChildAt(i);
+            sb.append(cb.isChecked() ? "☑ " : "☐ ").append(cb.getText()).append("\n");
+        }
+        
+        // Convert updated state back to HTML for storage
+        noteContent = Html.toHtml(new SpannableString(sb.toString().trim()), Html.TO_HTML_PARAGRAPH_LINES_CONSECUTIVE);
+        
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            AppDatabase db = AppDatabase.getDatabase(getContext());
+            Note note = new Note(noteTitle, noteContent, noteTimestamp, noteCategory, noteReminderTime, noteIsChecklist, noteIsSecret);
+            note.setId(noteId);
+            db.noteDao().update(note);
+        });
     }
 
     private void showShareDialog() {
@@ -115,7 +178,8 @@ public class ViewNoteFragment extends Fragment {
     }
 
     private void shareNoteAsText() {
-        String shareText = noteTitle + "\n\n" + noteContent;
+        String plainText = Html.fromHtml(noteContent, Html.FROM_HTML_MODE_LEGACY).toString();
+        String shareText = noteTitle + "\n\n" + plainText;
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, shareText);
@@ -126,7 +190,14 @@ public class ViewNoteFragment extends Fragment {
     private void shareNoteAsImage() {
         View shareView = LayoutInflater.from(requireContext()).inflate(R.layout.layout_share_note, null);
         ((TextView) shareView.findViewById(R.id.share_title)).setText(noteTitle);
-        ((TextView) shareView.findViewById(R.id.share_content)).setText(noteContent);
+        
+        TextView contentTv = shareView.findViewById(R.id.share_content);
+        if (noteIsChecklist) {
+            String plainText = Html.fromHtml(noteContent, Html.FROM_HTML_MODE_LEGACY).toString();
+            contentTv.setText(plainText);
+        } else {
+            contentTv.setText(Html.fromHtml(noteContent, Html.FROM_HTML_MODE_LEGACY));
+        }
 
         shareView.measure(View.MeasureSpec.makeMeasureSpec(1000, View.MeasureSpec.EXACTLY),
                 View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));

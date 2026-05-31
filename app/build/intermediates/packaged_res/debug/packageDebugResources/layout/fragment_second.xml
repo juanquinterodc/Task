@@ -11,8 +11,11 @@
         android:id="@+id/edit_text_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:hint="@string/note_title_hint"
         android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,8 +24,10 @@
         android:id="@+id/text_view_category_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:text="Category:"
+        android:textColor="@color/company_teal"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_title" />
@@ -41,16 +46,16 @@
             android:id="@+id/chip_group_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:singleSelection="true"
-            app:selectionRequired="true">
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_general"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="General"
-                android:checked="true" />
+                android:checked="true"
+                android:text="General" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_work"
@@ -76,55 +81,134 @@
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 
-    <Button
-        android:id="@+id/button_set_reminder"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+    <!-- Unified Editor Toolbar Grouping -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Set Reminder"
-        android:textColor="@color/company_teal"
-        app:icon="@android:drawable/ic_lock_idle_alarm"
-        app:iconTint="@color/company_teal"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeColor="#EEEEEE"
+        app:strokeWidth="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scroll_view_categories" />
+        app:layout_constraintTop_toBottomOf="@id/scroll_view_categories">
 
-    <ImageButton
-        android:id="@+id/button_remove_reminder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/button_set_reminder"
-        app:layout_constraintStart_toEndOf="@id/button_set_reminder"
-        app:layout_constraintTop_toTopOf="@id/button_set_reminder"
-        app:tint="@android:color/holo_red_dark" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <!-- Formatting Buttons: Bold and Italic -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_bold"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="B"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:paddingEnd="0dp"
+                app:paddingStart="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_italic"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="I"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:paddingEnd="0dp"
+                app:paddingStart="0dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="#DDDDDD" />
+
+            <!-- Reminder Button -->
+            <ImageButton
+                android:id="@+id/button_set_reminder"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Set Reminder"
+                android:src="@android:drawable/ic_lock_idle_alarm"
+                app:tint="@color/company_teal" />
+
+            <ImageButton
+                android:id="@+id/button_remove_reminder"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Remove Reminder"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:visibility="gone"
+                app:tint="@android:color/holo_red_dark" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="#DDDDDD" />
+
+            <!-- Checklist Switch -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_checklist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="List"
+                android:textSize="11sp"
+                app:switchPadding="8dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="#DDDDDD" />
+
+            <!-- Secret Switch -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_secret"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Secret"
+                android:textSize="11sp"
+                app:switchPadding="8dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/text_view_reminder_info"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="No reminder set"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/button_set_reminder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/button_remove_reminder"
-        app:layout_constraintTop_toTopOf="@id/button_set_reminder" />
+        android:layout_marginTop="2dp"
+        android:textColor="#999999"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_toolbar" />
 
     <EditText
         android:id="@+id/edit_text_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
         android:gravity="top"
         android:hint="@string/note_content_hint"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/button_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_set_reminder" />
+        app:layout_constraintTop_toBottomOf="@id/text_view_reminder_info" />
 
     <Button
         android:id="@+id/button_save"
