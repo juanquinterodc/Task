@@ -85,9 +85,9 @@ public class ViewNoteFragment extends Fragment {
 
         binding.buttonViewDelete.setOnClickListener(v -> {
             new AlertDialog.Builder(requireContext())
-                    .setTitle("Delete Note")
-                    .setMessage("Are you sure you want to delete this note?")
-                    .setPositiveButton("Delete", (dialog, which) -> {
+                    .setTitle(R.string.dialog_delete_title)
+                    .setMessage(R.string.delete_confirmation)
+                    .setPositiveButton(R.string.delete, (dialog, which) -> {
                         AppDatabase.databaseWriteExecutor.execute(() -> {
                             Note note = new Note(noteTitle, noteContent, noteTimestamp, noteCategory, noteReminderTime, noteIsChecklist, noteIsSecret);
                             note.setId(noteId);
@@ -99,7 +99,7 @@ public class ViewNoteFragment extends Fragment {
                             }
                         });
                     })
-                    .setNegativeButton("Cancel", null)
+                    .setNegativeButton(R.string.cancel, null)
                     .show();
         });
 
@@ -164,9 +164,9 @@ public class ViewNoteFragment extends Fragment {
     }
 
     private void showShareDialog() {
-        String[] options = {"Share as Text", "Share as Image"};
+        String[] options = {getString(R.string.share_option_text), getString(R.string.share_option_image)};
         new AlertDialog.Builder(requireContext())
-                .setTitle("Share Note")
+                .setTitle(R.string.dialog_share_title)
                 .setItems(options, (dialog, which) -> {
                     if (which == 0) {
                         shareNoteAsText();
@@ -223,10 +223,10 @@ public class ViewNoteFragment extends Fragment {
                 shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 shareIntent.setDataAndType(contentUri, requireContext().getContentResolver().getType(contentUri));
                 shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
-                startActivity(Intent.createChooser(shareIntent, "Share via"));
+                startActivity(Intent.createChooser(shareIntent, getString(R.string.share_title)));
             }
         } catch (IOException e) {
-            Toast.makeText(getContext(), "Error sharing image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.error_sharing_image, Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             app:iconifiedByDefault="false"
             app:queryBackground="@android:color/transparent"
-            app:queryHint="Search notes..." />
+            app:queryHint="@string/search_hint" />
     </com.google.android.material.card.MaterialCardView>
 
     <HorizontalScrollView
@@ -51,35 +51,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="All" />
+                android:text="@string/filter_all" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_filter_general"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="General" />
+                android:text="@string/category_general" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_filter_work"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Work" />
+                android:text="@string/category_work" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_filter_personal"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Personal" />
+                android:text="@string/category_personal" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_filter_ideas"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ideas" />
+                android:text="@string/category_ideas" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>

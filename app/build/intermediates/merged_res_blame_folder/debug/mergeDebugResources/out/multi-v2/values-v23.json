@@ -4,7 +4,7 @@
             "outputFile": "com.dreamcode.task.app-mergeDebugResources-44:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/0c88d5e72ad0aa257ce4eb86e8cfa20e/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/3bb3cd5635c430c3792b3d2a150f60bf/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,18 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/a1b095dad6cb1595bec31e3312c39e17/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
-                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
-                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
-                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
-                    }
-                },
-                {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/fb69a8c96104ee0c3da2a602b6818e60/transformed/material-1.10.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/21695845769c976bafd2f6244453e783/transformed/material-1.10.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,21,25,28,31,34,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -50,6 +39,17 @@
                         "endLines": "61,65,69,72,77,81,84,87,90,95,98,102,106",
                         "endColumns": "10,10,10,10,10,10,10,10,10,10,10,10,10",
                         "endOffsets": "3906,4048,4209,4419,4739,4976,5183,5390,5593,5925,6127,6392,6665"
+                    }
+                },
+                {
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/aa62117f47c66fd225697629a01f96b8/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
+                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
                     }
                 },
                 {

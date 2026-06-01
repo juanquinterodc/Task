@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Category:"
+        android:text="@string/category_label"
         android:textColor="@color/company_teal"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -55,28 +55,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="General" />
+                android:text="@string/category_general" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_work"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Work" />
+                android:text="@string/category_work" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_personal"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Personal" />
+                android:text="@string/category_personal" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_ideas"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ideas" />
+                android:text="@string/category_ideas" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
@@ -139,7 +139,7 @@
                 android:layout_width="44dp"
                 android:layout_height="44dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Set Reminder"
+                android:contentDescription="@string/description_set_reminder"
                 android:src="@android:drawable/ic_lock_idle_alarm"
                 app:tint="@color/company_teal" />
 
@@ -148,7 +148,7 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Remove Reminder"
+                android:contentDescription="@string/description_remove_reminder"
                 android:src="@android:drawable/ic_menu_close_clear_cancel"
                 android:visibility="gone"
                 app:tint="@android:color/holo_red_dark" />
@@ -164,7 +164,7 @@
                 android:id="@+id/switch_checklist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="List"
+                android:text="@string/switch_list_label"
                 android:textSize="11sp"
                 app:switchPadding="8dp" />
 
@@ -179,7 +179,7 @@
                 android:id="@+id/switch_secret"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Secret"
+                android:text="@string/switch_secret_label"
                 android:textSize="11sp"
                 app:switchPadding="8dp" />
 

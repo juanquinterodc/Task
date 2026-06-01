@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">DreamCode Notes</string>
+    <string name="action_about">Acerca de</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="action_secret_notes">Bóveda Secreta</string>
+    <string name="action_calendar">Calendario</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">DreamCode Notes</string>
+    <string name="second_fragment_label">Añadir Nota</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+
+    <string name="save_note">Guardar Nota</string>
+    <string name="update_note">Actualizar Nota</string>
+    <string name="note_title_hint">Título</string>
+    <string name="note_content_hint">Contenido de la nota</string>
+    <string name="empty_fields_error">Por favor, introduce un título y contenido</string>
+    <string name="note_saved_message">Nota guardada</string>
+
+    <string name="search_hint">Buscar notas…</string>
+    <string name="filter_all">Todas</string>
+    <string name="category_general">General</string>
+    <string name="category_work">Trabajo</string>
+    <string name="category_personal">Personal</string>
+    <string name="category_ideas">Ideas</string>
+    <string name="category_label">Categoría:</string>
+
+    <string name="description_set_reminder">Establecer recordatorio</string>
+    <string name="description_remove_reminder">Eliminar recordatorio</string>
+    <string name="no_reminder_set">Sin recordatorio</string>
+    <string name="reminder_prefix">Recordatorio: %1$s</string>
+    <string name="reminder_notification_content">Recordatorio de tu nota</string>
+
+    <string name="switch_list_label">Lista</string>
+    <string name="switch_secret_label">Secreto</string>
+
+    <string name="description_logo">Logo de DreamCode</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="delete_confirmation">¿Estás seguro de que quieres eliminar esta nota?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="share_title">Compartir vía</string>
+
+    <string name="dialog_delete_title">Eliminar Nota</string>
+    <string name="dialog_share_title">Compartir Nota</string>
+    <string name="share_option_text">Compartir como Texto</string>
+    <string name="share_option_image">Compartir como Imagen</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="error_sharing_image">Error al compartir la imagen</string>
+
+    <string name="biometric_title">Acceso a la Bóveda Secreta</string>
+    <string name="biometric_subtitle">Usa tu credencial biométrica para desbloquear tus notas secretas</string>
+    <string name="biometric_negative_button">Usar PIN</string>
+
+    <string name="about_title">Acerca de DreamCode Notes</string>
+    <string name="about_description">Una forma sencilla y elegante de llevar un registro de tus pensamientos, sentimientos y más.\n\nDreamCode Notes es tu santuario digital personal, donde tus ideas florecen y tu privacidad está protegida. Diseñado para ofrecer claridad y enfoque, te permite capturar desde inspiraciones fugaces hasta tus reflexiones más privadas con facilidad y tranquilidad. Cada detalle ha sido creado para ayudarte a organizar tu vida sin distracciones, asegurando que tus momentos más importantes estén siempre al alcance de tu mano. Ya sea que estés planeando tu próximo gran proyecto o simplemente necesites un espacio seguro para tu diario, DreamCode Notes está diseñado para crecer contigo.</string>
+    <string name="about_features">Características Principales:\n• 📂 Organización por Categorías sin esfuerzo\n• ⏰ Recordatorios precisos para mantenerte al día\n• 🔐 Bóveda Biométrica Segura (Huella/Reconocimiento Facial)\n• 📝 Formato de Texto Enriquecido y Listas de Tareas Interactivas\n• 📤 Uso compartido avanzado de notas como texto o imagen de marca\n• 🔍 Sistema de búsqueda y filtrado en tiempo real</string>
+    <string name="about_version">Versión %1$s</string>
+    <string name="about_credits">Desarrollado con ❤️ por Juan Quintero &amp; AI Assistant</string>
+    <string name="ok">Aceptar</string>
+</resources>

@@ -42,9 +42,9 @@ public class BiometricHelper {
         // Explicitly set BIOMETRIC_STRONG to ensure compatibility with setNegativeButtonText.
         // This prevents the IllegalArgumentException: "Negative text must not be set if device credential authentication is allowed."
         BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Secret Vault Access")
-                .setSubtitle("Use your biometric credential to unlock your secret notes")
-                .setNegativeButtonText("Use PIN")
+                .setTitle(activity.getString(R.string.biometric_title))
+                .setSubtitle(activity.getString(R.string.biometric_subtitle))
+                .setNegativeButtonText(activity.getString(R.string.biometric_negative_button))
                 .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG)
                 .build();
 

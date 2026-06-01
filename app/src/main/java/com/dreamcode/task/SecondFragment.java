@@ -64,7 +64,7 @@ public class SecondFragment extends Fragment {
                 if (content != null) {
                     binding.editTextContent.setText(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
                 }
-                binding.buttonSave.setText("Update Note");
+                binding.buttonSave.setText(R.string.update_note);
                 binding.switchChecklist.setChecked(isChecklist);
                 binding.switchSecret.setChecked(isSecret);
                 setCategoryChip(category);
@@ -78,7 +78,7 @@ public class SecondFragment extends Fragment {
         binding.buttonSetReminder.setOnClickListener(v -> showDatePicker());
         binding.buttonRemoveReminder.setOnClickListener(v -> {
             reminderTime = -1;
-            binding.textViewReminderInfo.setText("No reminder set");
+            binding.textViewReminderInfo.setText(R.string.no_reminder_set);
             binding.buttonRemoveReminder.setVisibility(View.GONE);
         });
 
@@ -139,7 +139,7 @@ public class SecondFragment extends Fragment {
                 }
 
                 if (reminderTime > System.currentTimeMillis()) {
-                    scheduleNotification(title, "Reminder for your note", reminderTime);
+                    scheduleNotification(title, getString(R.string.reminder_notification_content), reminderTime);
                 } else if (reminderTime == -1) {
                     cancelNotification();
                 }
@@ -211,7 +211,7 @@ public class SecondFragment extends Fragment {
 
     private void updateReminderInfo() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
-        binding.textViewReminderInfo.setText("Reminder: " + sdf.format(reminderCalendar.getTime()));
+        binding.textViewReminderInfo.setText(getString(R.string.reminder_prefix, sdf.format(reminderCalendar.getTime())));
         binding.buttonRemoveReminder.setVisibility(View.VISIBLE);
     }
 

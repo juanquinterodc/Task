@@ -30,7 +30,7 @@
                     android:id="@+id/toolbar_logo"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:contentDescription="DreamCode Logo"
+                    android:contentDescription="@string/description_logo"
                     android:src="@drawable/ic_company_logo" />
 
                 <TextView
