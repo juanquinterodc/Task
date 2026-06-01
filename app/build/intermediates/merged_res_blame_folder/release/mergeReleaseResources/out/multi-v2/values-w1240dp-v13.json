@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-43:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-44:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/res/values-w1240dp/dimens.xml",

@@ -2,11 +2,12 @@
     name="release"
     package="com.dreamcode.task"
     minSdkVersion="24"
-    targetSdkVersion="35"
+    targetSdkVersion="36.0"
+    shrinking="true"
     mergedManifest="build/intermediates/merged_manifest/release/processReleaseMainManifest/AndroidManifest.xml"
-    proguardFiles="build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-9.0.0:proguard-rules.pro"
+    proguardFiles="build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-9.2.1:proguard-rules.pro"
     partialResultsDir="build/intermediates/lint_vital_partial_results/release/lintVitalAnalyzeRelease/out"
-    desugaredMethodsFiles="/Users/dreamcode/.gradle/caches/9.1.0/transforms/90dcb264f65d4293a0a187f92763fa69/transformed/D8BackportedDesugaredMethods.txt">
+    desugaredMethodsFiles="/Users/dreamcode/.gradle/caches/9.4.1/transforms/1daa69c2270af4a065b322e7240146c3/transformed/D8BackportedDesugaredMethods.txt">
   <buildFeatures
       viewBinding="true"/>
   <sourceProviders>
@@ -14,7 +15,8 @@
         manifests="src/main/AndroidManifest.xml"
         javaDirectories="src/main/java:src/release/java:src/main/kotlin:src/release/kotlin"
         resDirectories="src/main/res:src/release/res"
-        assetsDirectories="src/main/assets:src/release/assets"/>
+        assetsDirectories="src/main/assets:src/release/assets"
+        keepRulesDirectories="src/main/keepRules:src/release/keepRules"/>
   </sourceProviders>
   <testSourceProviders>
   </testSourceProviders>
@@ -25,6 +27,6 @@
       type="MAIN"
       applicationId="com.dreamcode.task"
       generatedSourceFolders="build/generated/ap_generated_sources/release/out:build/generated/data_binding_base_class_source_out/release/out"
-      desugaredMethodsFiles="/Users/dreamcode/.gradle/caches/9.1.0/transforms/90dcb264f65d4293a0a187f92763fa69/transformed/D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="/Users/dreamcode/.gradle/caches/9.4.1/transforms/1daa69c2270af4a065b322e7240146c3/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

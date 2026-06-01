@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-43:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-44:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/f5c825e64b3906a559625dca80782635/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/21695845769c976bafd2f6244453e783/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

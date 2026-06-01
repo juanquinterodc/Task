@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-43:/values-v18/values-v18.xml",
+            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-44:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/fc9a84e9236376696d91dc16d9a36ed0/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/aa62117f47c66fd225697629a01f96b8/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

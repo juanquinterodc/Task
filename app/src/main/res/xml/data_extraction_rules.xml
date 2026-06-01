@@ -11,14 +11,13 @@
         <!-- Include shared preferences containing the Vault PIN and other settings -->
         <include domain="sharedpref" path="DreamCodeNotesPrefs.xml"/>
 
-        <!-- Exclude temporary cache files (like generated share images) to save space -->
-        <exclude domain="root" path="cache"/>
+        <!-- Note: Cache domain is excluded by default in Android Auto Backup.
+             Manual exclusion from "root" domain of "cache" causes lint errors if not explicitly included. -->
     </cloud-backup>
 
     <device-transfer>
         <!-- Same rules apply for direct device-to-device transfer -->
         <include domain="database" path="note_database"/>
         <include domain="sharedpref" path="DreamCodeNotesPrefs.xml"/>
-        <exclude domain="root" path="cache"/>
     </device-transfer>
 </data-extraction-rules>

@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-43:/values-v16/values-v16.xml",
+            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-44:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/decb6f9b266fdcc59c9c31233cf72ec8/transformed/core-1.9.0/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/fc9a84e9236376696d91dc16d9a36ed0/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/aa62117f47c66fd225697629a01f96b8/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/a9714cf1c298bfaa87356328e45f690e/transformed/core-1.9.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

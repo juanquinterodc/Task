@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-43:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.dreamcode.task.app-mergeReleaseResources-44:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/fc9a84e9236376696d91dc16d9a36ed0/transformed/appcompat-1.6.1/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/aa62117f47c66fd225697629a01f96b8/transformed/appcompat-1.6.1/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/dreamcode/.gradle/caches/9.1.0/transforms/f5c825e64b3906a559625dca80782635/transformed/material-1.10.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/dreamcode/.gradle/caches/9.4.1/transforms/21695845769c976bafd2f6244453e783/transformed/material-1.10.0/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

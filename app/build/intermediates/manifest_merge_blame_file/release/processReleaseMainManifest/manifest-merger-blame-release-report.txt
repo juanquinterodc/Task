@@ -1,152 +1,198 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.dreamcode.task"
-4    android:versionCode="1"
-5    android:versionName="1.0" >
+4    android:versionCode="2"
+5    android:versionName="1.0.1" >
 6
 7    <uses-sdk
+7-->INJECTED
 8        android:minSdkVersion="24"
-9        android:targetSdkVersion="35" />
+8-->INJECTED
+9        android:targetSdkVersion="36" />
+9-->INJECTED
 10
-11    <permission
-11-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/decb6f9b266fdcc59c9c31233cf72ec8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-12        android:name="com.dreamcode.task.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-12-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/decb6f9b266fdcc59c9c31233cf72ec8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-13        android:protectionLevel="signature" />
-13-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/decb6f9b266fdcc59c9c31233cf72ec8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+11    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+11-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:5:5-77
+11-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:5:22-74
+12    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+12-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:6:5-79
+12-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+13-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:7:5-72
+13-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:7:22-69
 14
-15    <uses-permission android:name="com.dreamcode.task.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-15-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/decb6f9b266fdcc59c9c31233cf72ec8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-15-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/decb6f9b266fdcc59c9c31233cf72ec8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
-16
-17    <application
-17-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:5:5-24:19
-18        android:allowBackup="true"
-18-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:6:9-35
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/decb6f9b266fdcc59c9c31233cf72ec8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
-20        android:dataExtractionRules="@xml/data_extraction_rules"
-20-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:7:9-65
-21        android:extractNativeLibs="false"
-22        android:fullBackupContent="@xml/backup_rules"
-22-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:8:9-54
-23        android:icon="@mipmap/ic_launcher"
-23-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:9:9-43
-24        android:label="@string/app_name"
-24-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:10:9-41
-25        android:roundIcon="@mipmap/ic_launcher_round"
-25-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:11:9-54
-26        android:supportsRtl="true"
-26-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:12:9-35
-27        android:theme="@style/Theme.Task" >
-27-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:13:9-42
-28        <activity
-28-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:14:9-23:20
-29            android:name="com.dreamcode.task.MainActivity"
-29-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:15:13-41
-30            android:exported="true"
-30-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:16:13-36
-31            android:theme="@style/Theme.Task" >
-31-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:17:13-46
-32            <intent-filter>
-32-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:18:13-22:29
-33                <action android:name="android.intent.action.MAIN" />
-33-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:19:17-69
-33-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:19:25-66
-34
-35                <category android:name="android.intent.category.LAUNCHER" />
-35-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:21:17-77
-35-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:21:27-74
-36            </intent-filter>
-37        </activity>
-38
-39        <service
-39-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/6041316d1dc938e02e6576c234e0f067/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
-40            android:name="androidx.room.MultiInstanceInvalidationService"
-40-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/6041316d1dc938e02e6576c234e0f067/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
-41            android:directBootAware="true"
-41-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/6041316d1dc938e02e6576c234e0f067/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
-42            android:exported="false" />
-42-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/6041316d1dc938e02e6576c234e0f067/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
-43
-44        <provider
-44-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/b6263d9578cbe071646cd517d1283a10/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-45            android:name="androidx.startup.InitializationProvider"
-45-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/b6263d9578cbe071646cd517d1283a10/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-46            android:authorities="com.dreamcode.task.androidx-startup"
-46-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/b6263d9578cbe071646cd517d1283a10/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-47            android:exported="false" >
-47-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/b6263d9578cbe071646cd517d1283a10/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-48            <meta-data
-48-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/b6263d9578cbe071646cd517d1283a10/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-49                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-49-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/b6263d9578cbe071646cd517d1283a10/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-50                android:value="androidx.startup" />
-50-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/b6263d9578cbe071646cd517d1283a10/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-51            <meta-data
-51-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/c5385fb5b6b61d1135f98d321674f9bf/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
-52                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-52-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/c5385fb5b6b61d1135f98d321674f9bf/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
-53                android:value="androidx.startup" />
-53-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dreamcode/.gradle/caches/9.1.0/transforms/c5385fb5b6b61d1135f98d321674f9bf/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
-54            <meta-data
-54-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-55                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-55-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-56                android:value="androidx.startup" />
-56-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-57        </provider>
-58
-59        <uses-library
-59-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/35cb66794cf69228982b95087cdab461/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
-60            android:name="androidx.window.extensions"
-60-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/35cb66794cf69228982b95087cdab461/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
-61            android:required="false" />
-61-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/35cb66794cf69228982b95087cdab461/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
-62        <uses-library
-62-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/35cb66794cf69228982b95087cdab461/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
-63            android:name="androidx.window.sidecar"
-63-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/35cb66794cf69228982b95087cdab461/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
-64            android:required="false" />
-64-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/35cb66794cf69228982b95087cdab461/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+15    <!-- suppress DeprecatedClassUsageInspection -->
+16    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+16-->[androidx.biometric:biometric:1.2.0-alpha05] /Users/dreamcode/.gradle/caches/9.4.1/transforms/f7e892fd4708617aa74740aaaffbf757/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:25:5-74
+16-->[androidx.biometric:biometric:1.2.0-alpha05] /Users/dreamcode/.gradle/caches/9.4.1/transforms/f7e892fd4708617aa74740aaaffbf757/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:25:22-71
+17
+18    <permission
+18-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/a9714cf1c298bfaa87356328e45f690e/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+19        android:name="com.dreamcode.task.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+19-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/a9714cf1c298bfaa87356328e45f690e/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+20        android:protectionLevel="signature" />
+20-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/a9714cf1c298bfaa87356328e45f690e/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+21
+22    <uses-permission android:name="com.dreamcode.task.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+22-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/a9714cf1c298bfaa87356328e45f690e/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+22-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/a9714cf1c298bfaa87356328e45f690e/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+23
+24    <application
+24-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:9:5-44:19
+25        android:allowBackup="true"
+25-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:10:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.9.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/a9714cf1c298bfaa87356328e45f690e/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+27        android:dataExtractionRules="@xml/data_extraction_rules"
+27-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:11:9-65
+28        android:extractNativeLibs="false"
+28-->INJECTED
+29        android:fullBackupContent="@xml/backup_rules"
+29-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:12:9-54
+30        android:icon="@mipmap/ic_launcher"
+30-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:13:9-43
+31        android:label="@string/app_name"
+31-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:14:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:15:9-54
+33        android:supportsRtl="true"
+33-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:16:9-35
+34        android:theme="@style/Theme.Task" >
+34-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:17:9-42
+35        <activity
+35-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:18:9-27:20
+36            android:name="com.dreamcode.task.MainActivity"
+36-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:19:13-41
+37            android:exported="true"
+37-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:20:13-36
+38            android:theme="@style/Theme.Task" >
+38-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:21:13-46
+39            <intent-filter>
+39-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:22:13-26:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:23:17-69
+40-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:23:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:25:17-77
+42-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:25:27-74
+43            </intent-filter>
+44        </activity>
+45
+46        <receiver
+46-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:29:9-32:40
+47            android:name="com.dreamcode.task.ReminderReceiver"
+47-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:30:13-45
+48            android:enabled="true"
+48-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:31:13-35
+49            android:exported="false" />
+49-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:32:13-37
+50
+51        <provider
+51-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:34:9-42:20
+52            android:name="androidx.core.content.FileProvider"
+52-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:35:13-62
+53            android:authorities="com.dreamcode.task.fileprovider"
+53-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:36:13-66
+54            android:exported="false"
+54-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:37:13-37
+55            android:grantUriPermissions="true" >
+55-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:38:13-47
+56            <meta-data
+56-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:39:13-41:54
+57                android:name="android.support.FILE_PROVIDER_PATHS"
+57-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:40:17-67
+58                android:resource="@xml/file_paths" />
+58-->/Users/dreamcode/AndroidStudioProjects/Task/app/src/main/AndroidManifest.xml:41:17-51
+59        </provider>
+60
+61        <service
+61-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.4.1/transforms/de9751bedb268224d3a733bfe74f6d0a/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+62            android:name="androidx.room.MultiInstanceInvalidationService"
+62-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.4.1/transforms/de9751bedb268224d3a733bfe74f6d0a/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+63            android:directBootAware="true"
+63-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.4.1/transforms/de9751bedb268224d3a733bfe74f6d0a/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+64            android:exported="false" />
+64-->[androidx.room:room-runtime:2.6.1] /Users/dreamcode/.gradle/caches/9.4.1/transforms/de9751bedb268224d3a733bfe74f6d0a/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
 65
-66        <receiver
-66-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-67            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-67-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-68            android:directBootAware="false"
-68-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-69            android:enabled="true"
-69-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-70            android:exported="true"
-70-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-71            android:permission="android.permission.DUMP" >
-71-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-72            <intent-filter>
-72-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-73                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-73-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-73-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-74            </intent-filter>
-75            <intent-filter>
-75-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-76                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-76-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-76-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-77            </intent-filter>
-78            <intent-filter>
-78-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-79                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-79-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-79-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-80            </intent-filter>
-81            <intent-filter>
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-82                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.1.0/transforms/ff73be47a899064d5c821d2206bcbd34/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-83            </intent-filter>
-84        </receiver>
-85    </application>
-86
-87</manifest>
+66        <provider
+66-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/4c1b48f9cf4f17fc4e765cd38c7bbad8/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+67            android:name="androidx.startup.InitializationProvider"
+67-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/4c1b48f9cf4f17fc4e765cd38c7bbad8/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+68            android:authorities="com.dreamcode.task.androidx-startup"
+68-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/4c1b48f9cf4f17fc4e765cd38c7bbad8/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+69            android:exported="false" >
+69-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/4c1b48f9cf4f17fc4e765cd38c7bbad8/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+70            <meta-data
+70-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/4c1b48f9cf4f17fc4e765cd38c7bbad8/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+71                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+71-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/4c1b48f9cf4f17fc4e765cd38c7bbad8/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+72                android:value="androidx.startup" />
+72-->[androidx.emoji2:emoji2:1.2.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/4c1b48f9cf4f17fc4e765cd38c7bbad8/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+73            <meta-data
+73-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dreamcode/.gradle/caches/9.4.1/transforms/11e789af34b95114cae8fcaa49d2971b/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+74                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+74-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dreamcode/.gradle/caches/9.4.1/transforms/11e789af34b95114cae8fcaa49d2971b/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+75                android:value="androidx.startup" />
+75-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dreamcode/.gradle/caches/9.4.1/transforms/11e789af34b95114cae8fcaa49d2971b/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+76            <meta-data
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+78                android:value="androidx.startup" />
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+79        </provider>
+80
+81        <uses-library
+81-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/7406bab46e30e2acfdb5da2ebb9b2d69/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+82            android:name="androidx.window.extensions"
+82-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/7406bab46e30e2acfdb5da2ebb9b2d69/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+83            android:required="false" />
+83-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/7406bab46e30e2acfdb5da2ebb9b2d69/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+84        <uses-library
+84-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/7406bab46e30e2acfdb5da2ebb9b2d69/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+85            android:name="androidx.window.sidecar"
+85-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/7406bab46e30e2acfdb5da2ebb9b2d69/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+86            android:required="false" />
+86-->[androidx.window:window:1.0.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/7406bab46e30e2acfdb5da2ebb9b2d69/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+87
+88        <receiver
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+89            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+90            android:directBootAware="false"
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+91            android:enabled="true"
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+92            android:exported="true"
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+93            android:permission="android.permission.DUMP" >
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+94            <intent-filter>
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+95                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+96            </intent-filter>
+97            <intent-filter>
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+98                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+99            </intent-filter>
+100            <intent-filter>
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+101                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+102            </intent-filter>
+103            <intent-filter>
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+104                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dreamcode/.gradle/caches/9.4.1/transforms/9e436b7137d9534f8a6ae7c908044385/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+105            </intent-filter>
+106        </receiver>
+107    </application>
+108
+109</manifest>
