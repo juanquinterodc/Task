@@ -36,6 +36,26 @@ DreamCode Notes is a simple, elegant, and secure Android application designed to
 - **Security Settings**: Dedicated settings screen to manage your Vault PIN.
 - **Secure Backups**: Configured Android data extraction rules to safely backup your notes and security settings to the cloud.
 
+### 🧪 Phase 5: Comprehensive Testing & Quality Assurance
+- **Unit & Instrumented Tests**: Comprehensive test suites for Room database DAOs, queries, and repositories.
+- **UI Integration Tests**: Automated Espresso tests covering critical navigation flows, dashboard filters, and settings management.
+- **Robust Verification**: Automated build and test execution pipelines to ensure zero regressions across releases.
+
+### 🏗 Phase 6: Modern Architecture & StateFlow Refactoring
+- **Clean Architecture Separation**: Introduction of dedicated ViewModels with StateFlow and LiveData.
+- **Lifecycle Awareness**: Resilient handling of configuration changes, background execution, and state persistence.
+- **Modular Services**: Separation of business logic, database transactions, and UI rendering layers.
+
+### 🛡 Phase 7: Advanced Security & Encrypted SharedPreferences
+- **Encrypted Storage**: Upgrading local sensitive data and Vault PIN storage to use AndroidX Security `EncryptedSharedPreferences`.
+- **Auto-Lock Mechanisms**: Automatic vault timeout and re-authentication on background/foreground transitions.
+- **Enhanced Privacy**: Advanced cryptographic protections safeguarding user notes against physical extraction and backup vulnerabilities.
+
+### 🎨 Phase 8: Theme, Accessibility & Edge-to-Edge Polish
+- **Edge-to-Edge Support**: Immersive full-screen display handling window insets for system bars and navigation bars smoothly.
+- **Accessibility Hardening**: Complete audit and addition of content descriptions, dynamic touch targets, and contrast compliance.
+- **Localization Polish**: Comprehensive validation and expansion of multi-language strings (English and Spanish).
+
 ## 🛠 Technologies Used
 - **Language**: Java
 - **Database**: Room Persistence Library (SQL-based local storage).
